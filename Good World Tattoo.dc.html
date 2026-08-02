@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#438A84"/><circle cx="100" cy="100" r="46" fill="#D4A636" stroke="#342A24" stroke-width="6"/><text x="100" y="94" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="#342A24">GW</text><text x="100" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#342A24">tattoo</text></svg></template>
+<helmet>
+<title>Good World Tattoo — Custom Tattoos in Sacramento</title>
+<meta name="description" content="Good World Tattoo is a relaxed, artist-driven tattoo studio in Sacramento. Custom tattoos, original art and laid-back energy." />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Caveat:wght@600&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #F4E8CB; color: #342A24; font-family: Nunito, ui-sans-serif, system-ui, sans-serif; font-size: 18px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: #B04A28; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: #D86E3D; }
+  button, input, select, textarea { font-family: inherit; font-size: 16px; }
+  :focus-visible { outline: 4px solid #342A24; outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: #D4A636; }
+  @keyframes gw-float { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+  @keyframes gw-float2 { 0%,100% { transform: translateY(0) rotate(4deg); } 50% { transform: translateY(-16px) rotate(-2deg); } }
+  @keyframes gw-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes gw-fade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F4E8CB;background-image:radial-gradient(#dfcfa9 1.1px, transparent 1.1px);background-size:20px 20px;padding-bottom:78px;">
+
+  <a href="#gw-main" style="position:absolute;left:-9999px;top:8px;background:#342A24;color:#F4E8CB;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:800;z-index:200;" style-focus="left:12px;">Skip to content</a>
+
+  <header style="position:sticky;top:0;z-index:80;background:#F4E8CB;border-bottom:3px solid #342A24;box-shadow:0 3px 0 rgba(52,42,36,0.12);">
+    <div style="display:flex;align-items:center;gap:14px;padding:9px clamp(12px,3vw,32px);max-width:1400px;margin:0 auto;">
+      <button onClick="{{ goHome }}" aria-label="Good World Tattoo — home" style="display:flex;align-items:center;gap:10px;background:none;border:none;padding:4px;cursor:pointer;min-height:44px;flex:none;white-space:nowrap;">
+        <img src="uploads/imgi_1_368564409_201904559551984_1738508491849070740_n.jpg" alt="" width="44" height="44" style="width:44px;height:44px;border-radius:50%;border:3px solid #342A24;object-fit:cover;" />
+        <span style="font-family:Shrikhand,Georgia,serif;font-size:19px;color:#342A24;line-height:1;text-align:left;">Good World<br /><span style="font-size:12px;color:#B04A28;letter-spacing:0.06em;">tattoo · sacramento</span></span>
+      </button>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Main" style="display:flex;gap:2px;flex:1;min-width:0;justify-content:flex-end;align-items:center;flex-wrap:wrap;">
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="7">
+          <button onClick="{{ item.onClick }}" aria-current="{{ item.current }}" style="border:none;background:{{ item.bg }};padding:10px 12px;border-radius:999px;font-weight:800;font-size:16px;color:#342A24;cursor:pointer;white-space:nowrap;min-height:44px;transition:background 0.15s;" style-hover="background:#F0D9A4;">{{ item.label }}</button>
+        </sc-for>
+      </nav>
+      </sc-if>
+      <button onClick="{{ goBooking }}" style="flex:none;margin-left:auto;padding:12px 20px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:3px 3px 0 #342A24;cursor:pointer;white-space:nowrap;min-height:44px;" style-hover="transform:translate(1px,1px);box-shadow:2px 2px 0 #342A24;">Book</button>
+      <sc-if value="{{ isMobile }}">
+        <button onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-label="Open menu" style="flex:none;width:46px;height:46px;border-radius:14px;border:3px solid #342A24;background:#D4A636;cursor:pointer;display:grid;place-items:center;font-size:20px;line-height:1;">☰</button>
+      </sc-if>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}">
+    <div style="position:fixed;inset:0;z-index:90;background:rgba(52,42,36,0.55);" onClick="{{ closeMenu }}"></div>
+    <nav aria-label="Mobile" style="position:fixed;z-index:95;top:0;right:0;bottom:0;width:min(340px,86vw);background:#F4E8CB;border-left:4px solid #342A24;padding:18px;overflow-y:auto;display:grid;gap:10px;align-content:start;animation:gw-fade 0.2s ease-out;">
+      <button onClick="{{ closeMenu }}" style="justify-self:end;min-width:46px;min-height:46px;border-radius:14px;border:3px solid #342A24;background:#CE858A;font-weight:800;font-size:18px;cursor:pointer;" aria-label="Close menu">✕</button>
+      <sc-for list="{{ nav }}" as="item" hint-placeholder-count="7">
+        <button onClick="{{ item.onClick }}" style="text-align:left;padding:15px 18px;border-radius:16px;border:3px solid #342A24;background:{{ item.bg2 }};font-family:Shrikhand,Georgia,serif;font-size:22px;color:#342A24;cursor:pointer;min-height:44px;">{{ item.label }}</button>
+      </sc-for>
+      <button onClick="{{ goBooking }}" style="text-align:left;padding:15px 18px;border-radius:16px;border:3px solid #342A24;background:#D86E3D;color:#FFF6E4;font-family:Shrikhand,Georgia,serif;font-size:22px;cursor:pointer;box-shadow:4px 4px 0 #342A24;">Book a Tattoo</button>
+    </nav>
+  </sc-if>
+
+  <main id="gw-main">
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <section style="position:relative;overflow:hidden;background:#438A84;border-bottom:4px solid #342A24;padding:clamp(32px,5vw,72px) clamp(18px,5vw,64px);">
+      <div style="position:absolute;inset:0;opacity:0.14;background-image:repeating-linear-gradient(45deg,#F4E8CB 0 2px,transparent 2px 8px);pointer-events:none;"></div>
+      <div style="position:relative;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,4vw,56px);align-items:center;">
+        <div>
+          <p style="display:inline-block;transform:rotate(-2deg);background:#D4A636;border:3px solid #342A24;border-radius:999px;padding:6px 16px;font-weight:800;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 18px;">Sacramento · 15th Street</p>
+          <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(38px,7vw,80px);line-height:0.98;margin:0 0 18px;color:#FFF6E4;text-shadow:5px 5px 0 #342A24;">Good Tattoos.<br />Good People.<br />Good World.</h1>
+          <p style="font-size:clamp(18px,2vw,22px);line-height:1.5;max-width:32ch;color:#FFF6E4;margin:0 0 26px;font-weight:600;">Custom tattoos, original art and laid-back energy in Sacramento.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+            <button onClick="{{ goGallery }}" style="padding:16px 28px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:18px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;" style-hover="transform:translate(2px,2px);box-shadow:3px 3px 0 #342A24;">See the Tattoos</button>
+            <button onClick="{{ goBooking }}" style="padding:16px 28px;border-radius:999px;background:#FFF6E4;color:#342A24;font-weight:800;font-size:18px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;" style-hover="transform:translate(2px,2px);box-shadow:3px 3px 0 #342A24;">Book an Appointment</button>
+          </div>
+          <p style="margin:18px 0 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
+            <button onClick="{{ goVisit }}" style="background:none;border:none;padding:8px 0;color:#FFF6E4;font-weight:800;font-size:17px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px;">Come Visit the Studio →</button>
+            <span style="font-family:Caveat,cursive;font-size:25px;color:#FFF6E4;transform:rotate(-2deg);">walk-ins welcome when we have room</span>
+          </p>
+        </div>
+        <div style="position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center;">
+          <div style="position:absolute;top:2%;left:0;width:52%;animation:gw-float 10s ease-in-out infinite;">
+            <img src="uploads/imgi_10_images.jpg" alt="Traditional colour panther and dagger tattoo" width="600" height="600" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:5px solid #FFF6E4;box-shadow:6px 6px 0 #342A24;" />
+          </div>
+          <div style="position:absolute;top:20%;right:0;width:46%;animation:gw-float2 13s ease-in-out infinite;">
+            <img src="uploads/imgi_19_images.jpg" alt="Traditional cowboy skull tattoo" width="600" height="600" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:5px solid #FFF6E4;box-shadow:6px 6px 0 #342A24;" />
+          </div>
+          <div style="position:absolute;bottom:0;left:14%;width:46%;animation:gw-float 15s ease-in-out infinite;">
+            <img src="uploads/imgi_14_images.jpg" alt="Traditional blue crab tattoo" width="600" height="600" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:5px solid #FFF6E4;box-shadow:6px 6px 0 #342A24;" />
+          </div>
+          <div aria-hidden="true" style="position:absolute;bottom:6%;right:2%;width:82px;height:82px;border-radius:50%;background:#D4A636;border:4px solid #342A24;display:grid;place-items:center;font-family:Shrikhand,Georgia,serif;font-size:13px;text-align:center;line-height:1.1;color:#342A24;animation:gw-spin 60s linear infinite;">good<br />world</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#F4E8CB;padding:clamp(44px,7vw,92px) clamp(18px,5vw,64px);border-bottom:4px solid #342A24;">
+      <div style="max-width:900px;margin:0 auto;text-align:center;">
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(30px,5vw,56px);margin:0 0 20px;">Welcome to Good World</h2>
+        <p style="font-size:19px;line-height:1.7;margin:0 0 16px;">Good World Tattoo is a relaxed, artist-driven tattoo studio in Sacramento. Getting tattooed should feel exciting, comfortable and personal — not intimidating.</p>
+        <p style="font-size:19px;line-height:1.7;margin:0 0 30px;">Bring us your idea, your sketch, your strange dream or just a general feeling. We'll talk it through, make something original and have a good time along the way.</p>
+        <p style="display:inline-block;background:#CE858A;border:3px solid #342A24;border-radius:22px;padding:20px 28px;transform:rotate(-1.2deg);box-shadow:6px 6px 0 #342A24;font-family:Shrikhand,Georgia,serif;font-size:clamp(19px,2.6vw,28px);margin:0;line-height:1.3;">No pressure. No attitude.<br />Just good work and good energy.</p>
+      </div>
+    </section>
+
+    <section style="background:#75814F;padding:clamp(44px,7vw,88px) clamp(18px,5vw,64px);border-bottom:4px solid #342A24;">
+      <div style="max-width:1180px;margin:0 auto;">
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,50px);margin:0 0 6px;color:#FFF6E4;">Meet the Artists</h2>
+        <p style="font-family:Caveat,cursive;font-size:26px;color:#F0E2BE;margin:0 0 30px;">Currently floating around the studio.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px;">
+          <sc-for list="{{ artists }}" as="a" hint-placeholder-count="2">
+            <article style="background:#FFF6E4;border:3px solid #342A24;border-radius:22px;padding:20px;box-shadow:7px 7px 0 #342A24;">
+              <img src="{{ a.photo }}" alt="{{ a.photoAlt }}" width="800" height="600" loading="lazy" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:3px solid #342A24;border-radius:14px;" />
+              <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:29px;margin:16px 0 4px;">{{ a.name }}</h3>
+              <p style="margin:0 0 10px;font-weight:800;color:#B04A28;">{{ a.styles }}</p>
+              <p style="margin:0 0 16px;line-height:1.65;">{{ a.intro }}</p>
+              <button onClick="{{ a.onClick }}" style="padding:13px 22px;border-radius:999px;background:#438A84;color:#FFF6E4;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">Meet {{ a.first }}</button>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#F4E8CB;padding:clamp(44px,7vw,88px) clamp(18px,5vw,64px);border-bottom:4px solid #342A24;">
+      <div style="max-width:1180px;margin:0 auto;">
+        <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:26px;">
+          <div>
+            <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,50px);margin:0;">Fresh From the Studio</h2>
+            <p style="font-family:Caveat,cursive;font-size:26px;margin:4px 0 0;color:#B04A28;">See what we've been making.</p>
+          </div>
+          <button onClick="{{ goGallery }}" style="padding:14px 24px;border-radius:999px;background:#D4A636;color:#342A24;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">Browse the Gallery</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;">
+          <sc-for list="{{ featured }}" as="g" hint-placeholder-count="6">
+            <button onClick="{{ g.onOpen }}" aria-label="{{ g.openLabel }}" style="padding:0;border:3px solid #342A24;background:#FFF6E4;border-radius:14px;overflow:hidden;cursor:pointer;box-shadow:5px 5px 0 #342A24;transition:transform 0.15s,box-shadow 0.15s;" style-hover="transform:translate(-2px,-2px);box-shadow:7px 7px 0 #342A24;">
+              <img src="{{ g.src }}" alt="{{ g.title }}" width="600" height="600" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;" />
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#775D7B;padding:clamp(44px,7vw,88px) clamp(18px,5vw,64px);border-bottom:4px solid #342A24;">
+      <div style="max-width:1100px;margin:0 auto;">
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,50px);margin:0 0 26px;color:#FFF6E4;">What We're About</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(226px,1fr));gap:20px;">
+          <sc-for list="{{ values }}" as="v" hint-placeholder-count="5">
+            <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #342A24;">
+              <div aria-hidden="true" style="width:40px;height:40px;border-radius:50%;background:{{ v.dot }};border:3px solid #342A24;margin-bottom:12px;"></div>
+              <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:22px;margin:0 0 8px;">{{ v.title }}</h3>
+              <p style="margin:0;line-height:1.6;font-size:17px;">{{ v.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#86B5C4;padding:clamp(44px,7vw,88px) clamp(18px,5vw,64px);border-bottom:4px solid #342A24;">
+      <div style="max-width:1050px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:center;">
+        <div>
+          <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(28px,4.4vw,48px);margin:0 0 14px;">A Chill Place to Get Tattooed</h2>
+          <p style="font-size:19px;line-height:1.7;margin:0 0 22px;">You don't need to know tattoo terminology or show up with perfect reference images. Bring your idea, your story or your general feeling, and we'll help you figure out the rest.</p>
+          <button onClick="{{ goStudio }}" style="padding:14px 26px;border-radius:999px;background:#342A24;color:#FFF6E4;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #FFF6E4;cursor:pointer;min-height:44px;">Look Around the Studio</button>
+        </div>
+        <img src="uploads/imgi_11_images.jpg" alt="Black and grey lady and dagger tattoo photographed outside the shop" width="800" height="600" loading="lazy" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:4px solid #FFF6E4;box-shadow:8px 8px 0 #342A24;transform:rotate(1.2deg);" />
+      </div>
+    </section>
+
+    <section style="background:#F4E8CB;padding:clamp(44px,7vw,88px) clamp(18px,5vw,64px);border-bottom:4px solid #342A24;text-align:center;">
+      <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,50px);margin:0 0 12px;">Got an Idea Today?</h2>
+      <p style="font-size:19px;line-height:1.7;max-width:58ch;margin:0 auto 24px;">Walk-ins are welcome whenever we have space. Smaller tattoos and available flash usually work best for same-day work. Send a message or stop by and say hello.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+        <button onClick="{{ goFlash }}" style="padding:14px 26px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;">Browse Available Flash</button>
+        <button onClick="{{ goWalkins }}" style="padding:14px 26px;border-radius:999px;background:#D4A636;color:#342A24;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;">Check Walk-In Availability</button>
+        <a href="https://maps.google.com/?q=2401+15th+Street+Sacramento+CA+95818" target="_blank" rel="noopener" style="padding:14px 26px;border-radius:999px;background:#FFF6E4;color:#342A24;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;">Get Directions</a>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isArtists }}">
+    <section style="padding:clamp(32px,5vw,72px) clamp(18px,5vw,64px);">
+      <div style="max-width:1180px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,64px);margin:0 0 4px;">The Artists</h1>
+        <p style="font-family:Caveat,cursive;font-size:28px;color:#B04A28;margin:0 0 32px;">Good art. Good conversations.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
+          <sc-for list="{{ artists }}" as="a" hint-placeholder-count="2">
+            <article style="background:#FFF6E4;border:3px solid #342A24;border-radius:24px;overflow:hidden;box-shadow:8px 8px 0 #342A24;">
+              <img src="{{ a.photo }}" alt="{{ a.photoAlt }}" width="900" height="640" loading="lazy" style="width:100%;height:auto;aspect-ratio:7/5;object-fit:cover;border-bottom:3px solid #342A24;" />
+              <div style="padding:24px;">
+                <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:32px;margin:0 0 4px;">{{ a.name }}</h2>
+                <p style="margin:0 0 12px;font-weight:800;color:#B04A28;">{{ a.styles }}</p>
+                <p style="margin:0 0 16px;line-height:1.65;">{{ a.intro }}</p>
+                <p style="margin:0 0 8px;font-weight:800;">{{ a.first }} may be a good fit for:</p>
+                <ul style="margin:0 0 16px;padding-left:20px;line-height:1.7;">
+                  <sc-for list="{{ a.fitFor }}" as="f" hint-placeholder-count="4"><li>{{ f }}</li></sc-for>
+                </ul>
+                <p style="margin:0 0 18px;font-weight:800;background:#D4A636;display:inline-block;padding:7px 15px;border-radius:999px;border:2px solid #342A24;">{{ a.booking }}</p>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                  <button onClick="{{ a.onClick }}" style="padding:13px 22px;border-radius:999px;background:#438A84;color:#FFF6E4;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">See {{ a.first }}'s Work</button>
+                  <button onClick="{{ a.onBook }}" style="padding:13px 22px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">Book With {{ a.first }}</button>
+                </div>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+        <div style="margin-top:30px;background:#86B5C4;border:3px solid #342A24;border-radius:22px;padding:24px;box-shadow:7px 7px 0 #342A24;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;">
+          <div>
+            <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:28px;margin:0 0 6px;">Not sure who to choose?</h2>
+            <p style="margin:0;font-size:17px;line-height:1.6;max-width:52ch;">Tell us the idea and we'll point you at whoever fits it best. Nobody here is precious about it.</p>
+          </div>
+          <button onClick="{{ goBooking }}" style="padding:15px 26px;border-radius:999px;background:#342A24;color:#FFF6E4;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #FFF6E4;cursor:pointer;min-height:44px;">Find Your Artist</button>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isArtistPage }}">
+    <section style="background:#D4A636;border-bottom:4px solid #342A24;padding:clamp(28px,4vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:1150px;margin:0 auto;">
+        <p style="margin:0 0 16px;font-weight:700;font-size:16px;"><button onClick="{{ goArtists }}" style="background:none;border:none;padding:6px 0;font-weight:800;font-size:16px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;color:#342A24;min-height:44px;">← All artists</button></p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;align-items:center;">
+          <div style="transform:rotate(-1.2deg);">{{ artistPortrait }}</div>
+          <div>
+            <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(34px,6vw,60px);margin:0 0 10px;line-height:1;">{{ artist.name }}</h1>
+            <p style="font-size:19px;line-height:1.65;margin:0 0 18px;">{{ artist.intro }}</p>
+            <p style="font-weight:800;background:#FFF6E4;display:inline-block;padding:8px 16px;border-radius:999px;border:3px solid #342A24;margin:0 0 20px;">{{ artist.booking }}</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <button onClick="{{ goBooking }}" style="padding:15px 26px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;">Book With {{ artist.first }}</button>
+              <span style="padding:15px 24px;border-radius:999px;background:#FFF6E4;font-weight:800;border:3px dashed #342A24;font-size:16px;">Instagram handle needed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style="padding:clamp(36px,5vw,72px) clamp(18px,5vw,64px);">
+      <div style="max-width:1150px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;">
+        <sc-for list="{{ artistCards }}" as="c" hint-placeholder-count="4">
+          <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:20px;padding:20px;box-shadow:6px 6px 0 #342A24;">
+            <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:22px;margin:0 0 10px;color:#B04A28;">{{ c.title }}</h2>
+            <p style="margin:0;line-height:1.65;font-size:17px;">{{ c.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    <section style="background:#438A84;border-top:4px solid #342A24;border-bottom:4px solid #342A24;padding:clamp(36px,5vw,72px) clamp(18px,5vw,64px);">
+      <div style="max-width:1150px;margin:0 auto;">
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(26px,4vw,42px);margin:0 0 20px;color:#FFF6E4;">Selected Work</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;">
+          <sc-for list="{{ artistWork }}" as="g" hint-placeholder-count="4">
+            <button onClick="{{ g.onOpen }}" aria-label="{{ g.openLabel }}" style="padding:0;border:4px solid #FFF6E4;background:#FFF6E4;border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:5px 5px 0 #342A24;transition:transform 0.15s,box-shadow 0.15s;" style-hover="transform:translate(-2px,-2px);box-shadow:8px 8px 0 #342A24;">
+              <img src="{{ g.src }}" alt="{{ g.title }}" width="600" height="600" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;" />
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isGallery }}">
+    <section style="padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:1300px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,64px);margin:0 0 4px;">Tattoo Gallery</h1>
+        <p style="font-family:Caveat,cursive;font-size:28px;color:#B04A28;margin:0 0 22px;">Fresh tattoos from good people — tap anything to open it big.</p>
+        <div role="group" aria-label="Filter tattoos by style" style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px;">
+          <sc-for list="{{ galleryFilters }}" as="f" hint-placeholder-count="8">
+            <button onClick="{{ f.onClick }}" aria-pressed="{{ f.active }}" style="padding:10px 18px;border-radius:999px;border:3px solid #342A24;font-weight:800;font-size:15px;cursor:pointer;min-height:44px;background:{{ f.bg }};color:{{ f.fg }};">{{ f.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ galleryEmpty }}">
+          <p style="background:#FFF6E4;border:3px dashed #342A24;border-radius:20px;padding:34px;text-align:center;font-family:Shrikhand,Georgia,serif;font-size:24px;margin:0;">Nothing in this corner yet. Try another filter.</p>
+        </sc-if>
+        <div style="columns:270px;column-gap:18px;">
+          <sc-for list="{{ galleryItems }}" as="g" hint-placeholder-count="9">
+            <div style="break-inside:avoid;margin:0 0 18px;">
+              <button onClick="{{ g.onOpen }}" aria-label="{{ g.openLabel }}" style="display:block;width:100%;padding:0;border:3px solid #342A24;background:#FFF6E4;border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:6px 6px 0 #342A24;text-align:left;transition:transform 0.15s,box-shadow 0.15s;" style-hover="transform:translate(-2px,-2px);box-shadow:9px 9px 0 #342A24;">
+                <img src="{{ g.src }}" alt="{{ g.title }}" width="800" height="800" loading="lazy" style="width:100%;height:auto;aspect-ratio:{{ g.ratio }};object-fit:cover;" />
+                <sc-if value="{{ showCaptions }}" hint-placeholder-val="{{ true }}">
+                  <span style="display:block;padding:12px 14px;border-top:3px solid #342A24;">
+                    <span style="display:block;font-family:Shrikhand,Georgia,serif;font-size:17px;">{{ g.title }}</span>
+                    <span style="display:block;font-size:14px;font-weight:700;color:#B04A28;">{{ g.meta }}</span>
+                  </span>
+                </sc-if>
+              </button>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isFlash }}">
+    <section style="background:#B04A28;border-bottom:4px solid #342A24;padding:clamp(26px,4vw,54px) clamp(14px,4vw,56px);">
+      <div style="max-width:1400px;margin:0 auto;">
+        <a href="#gw-wall-skip" style="position:absolute;left:-9999px;" style-focus="position:static;display:inline-block;margin-bottom:10px;background:#FFF6E4;padding:10px 16px;border-radius:999px;font-weight:800;">Skip the flash wall</a>
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(30px,5.6vw,58px);margin:0 0 4px;color:#FFF6E4;">Find Something That Finds You</h1>
+        <p style="font-family:Caveat,cursive;font-size:27px;color:#F4E8CB;margin:0 0 20px;">Sometimes the right tattoo is already waiting on the wall.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;">
+          <button onClick="{{ pickWeird }}" style="padding:13px 22px;border-radius:999px;background:#D4A636;color:#342A24;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">Pick Something Weird</button>
+          <button onClick="{{ toggleSaved }}" aria-pressed="{{ savedOpen }}" style="padding:13px 22px;border-radius:999px;background:{{ savedBtnBg }};color:#342A24;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">Saved Flash ({{ savedCount }})</button>
+          <button onClick="{{ toggleView }}" style="padding:13px 22px;border-radius:999px;background:#FFF6E4;color:#342A24;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">{{ viewToggleLabel }}</button>
+          <sc-if value="{{ wallMode }}">
+            <button onClick="{{ resetView }}" style="padding:13px 22px;border-radius:999px;background:#FFF6E4;color:#342A24;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">Reset View</button>
+          </sc-if>
+          <button onClick="{{ toggleAdmin }}" aria-expanded="{{ adminOpen }}" style="padding:13px 22px;border-radius:999px;background:none;color:#FFF6E4;font-weight:800;font-size:16px;border:3px dashed #FFF6E4;cursor:pointer;min-height:44px;">Studio tools</button>
+        </div>
+
+        <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:20px;padding:18px;box-shadow:6px 6px 0 #342A24;margin-bottom:22px;">
+          <label style="display:grid;gap:6px;font-weight:800;margin-bottom:14px;max-width:420px;">Search the Wall
+            <input value="{{ query }}" onChange="{{ setQuery }}" type="search" placeholder="mushroom, dragon, snake, cosmic…" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;min-height:44px;" />
+          </label>
+          <sc-for list="{{ filterGroups }}" as="grp" hint-placeholder-count="5">
+            <div role="group" aria-label="{{ grp.aria }}" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;">
+              <span style="font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:0.06em;min-width:92px;">{{ grp.name }}</span>
+              <sc-for list="{{ grp.options }}" as="o" hint-placeholder-count="5">
+                <button onClick="{{ o.onClick }}" aria-pressed="{{ o.active }}" style="padding:9px 15px;border-radius:999px;border:3px solid #342A24;font-weight:800;font-size:14px;cursor:pointer;min-height:44px;background:{{ o.bg }};color:{{ o.fg }};">{{ o.label }}</button>
+              </sc-for>
+            </div>
+          </sc-for>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:14px;border-top:3px dashed #E0CFA6;padding-top:14px;">
+            <p role="status" aria-live="polite" style="margin:0;font-weight:800;font-size:17px;">{{ resultCount }}</p>
+            <sc-if value="{{ hasActiveFilters }}">
+              <button onClick="{{ clearFilters }}" style="padding:11px 20px;border-radius:999px;background:#CE858A;color:#342A24;font-weight:800;font-size:15px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Clear Filters</button>
+            </sc-if>
+          </div>
+          <sc-if value="{{ hasActiveFilters }}">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
+              <sc-for list="{{ activeChips }}" as="c" hint-placeholder-count="2">
+                <button onClick="{{ c.onRemove }}" style="padding:8px 14px;border-radius:999px;background:#86B5C4;color:#342A24;font-weight:800;font-size:14px;border:3px solid #342A24;cursor:pointer;min-height:44px;">{{ c.label }} ✕</button>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ adminOpen }}">
+          <div style="background:#775D7B;border:3px solid #342A24;border-radius:20px;padding:20px;box-shadow:6px 6px 0 #342A24;margin-bottom:22px;">
+            <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:24px;margin:0 0 6px;color:#FFF6E4;">Studio tools — flash manager</h2>
+            <p style="margin:0 0 16px;color:#F4E8CB;font-size:16px;line-height:1.6;max-width:70ch;">Change availability and featured status without touching code. Changes save in this browser as a preview of the CMS; wiring them to the real content store is a launch task.</p>
+            <div style="display:grid;gap:10px;">
+              <sc-for list="{{ adminRows }}" as="r" hint-placeholder-count="4">
+                <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:14px;padding:12px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+                  <img src="{{ r.src }}" alt="" width="56" height="56" loading="lazy" style="width:56px;height:56px;object-fit:cover;border:2px solid #342A24;border-radius:8px;" />
+                  <span style="font-weight:800;flex:1 1 160px;">{{ r.title }}<br /><span style="font-weight:600;font-size:14px;">{{ r.artist }} · id {{ r.id }}</span></span>
+                  <label style="display:flex;gap:6px;align-items:center;font-weight:800;font-size:14px;">Status
+                    <select value="{{ r.status }}" onChange="{{ r.onStatus }}" style="padding:9px 10px;border:3px solid #342A24;border-radius:10px;min-height:44px;background:#fff;">
+                      <option value="available">Available</option>
+                      <option value="repeatable">Repeatable</option>
+                      <option value="ask">Ask the Artist</option>
+                      <option value="pending">Appointment Pending</option>
+                      <option value="claimed">Claimed</option>
+                      <option value="archived">Archived</option>
+                    </select>
+                  </label>
+                  <label style="display:flex;gap:8px;align-items:center;font-weight:800;font-size:14px;min-height:44px;">
+                    <input type="checkbox" checked="{{ r.featured }}" onChange="{{ r.onFeature }}" style="width:22px;height:22px;" /> Featured
+                  </label>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+              <button onClick="{{ adminReset }}" style="padding:11px 20px;border-radius:999px;background:#FFF6E4;font-weight:800;font-size:15px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Reset to published values</button>
+              <button onClick="{{ toggleArchive }}" aria-pressed="{{ showArchived }}" style="padding:11px 20px;border-radius:999px;background:{{ archiveBtnBg }};font-weight:800;font-size:15px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Show archived designs</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ savedOpen }}">
+          <div style="background:#F4E8CB;border:3px solid #342A24;border-radius:20px;padding:20px;box-shadow:6px 6px 0 #342A24;margin-bottom:22px;">
+            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
+              <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:26px;margin:0;">Saved Flash</h2>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <sc-if value="{{ hasSaved }}">
+                  <button onClick="{{ sendSaved }}" style="padding:11px 20px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:15px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Send these as inspiration</button>
+                </sc-if>
+                <sc-if value="{{ hasSaved }}">
+                  <button onClick="{{ clearSaved }}" style="padding:11px 20px;border-radius:999px;background:none;font-weight:800;font-size:15px;border:3px dashed #342A24;cursor:pointer;min-height:44px;">Clear all</button>
+                </sc-if>
+              </div>
+            </div>
+            <sc-if value="{{ noSaved }}">
+              <p style="margin:14px 0 0;font-size:17px;line-height:1.6;">Nothing in your pile yet. Tap the sun on any design to save it.</p>
+            </sc-if>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:16px;">
+              <sc-for list="{{ savedItems }}" as="s" hint-placeholder-count="0">
+                <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:14px;padding:10px;">
+                  <button onClick="{{ s.onOpen }}" aria-label="{{ s.openLabel }}" style="display:block;width:100%;padding:0;border:2px solid #342A24;border-radius:10px;overflow:hidden;background:none;cursor:pointer;">
+                    <img src="{{ s.src }}" alt="{{ s.alt }}" width="400" height="400" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;" />
+                  </button>
+                  <p style="margin:8px 0 6px;font-weight:800;font-size:14px;">{{ s.title }}</p>
+                  <button onClick="{{ s.onRemove }}" style="padding:8px 12px;border-radius:999px;background:none;border:2px solid #342A24;font-weight:800;font-size:13px;cursor:pointer;min-height:44px;width:100%;">Remove</button>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showFeatured }}">
+          <div style="margin-bottom:24px;">
+            <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(24px,3.4vw,36px);margin:0 0 4px;color:#FFF6E4;">Fresh From the Wall</h2>
+            <p style="font-family:Caveat,cursive;font-size:24px;color:#F4E8CB;margin:0 0 14px;">New stuff just landed.</p>
+            <div style="display:flex;gap:16px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory;">
+              <sc-for list="{{ featuredFlash }}" as="f" hint-placeholder-count="3">
+                <button onClick="{{ f.onOpen }}" aria-label="{{ f.openLabel }}" style="flex:none;width:210px;scroll-snap-align:start;background:#FFF6E4;border:3px solid #342A24;border-radius:16px;padding:10px;box-shadow:5px 5px 0 #342A24;cursor:pointer;text-align:left;">
+                  <img src="{{ f.src }}" alt="{{ f.alt }}" width="500" height="500" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:2px solid #342A24;border-radius:10px;" />
+                  <span style="display:block;font-family:Shrikhand,Georgia,serif;font-size:17px;margin:10px 0 4px;">{{ f.title }}</span>
+                  <span style="display:block;font-size:14px;font-weight:700;">{{ f.artist }} · {{ f.statusLabel }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ flashEmpty }}">
+          <p style="background:#FFF6E4;border:3px dashed #342A24;border-radius:20px;padding:34px;text-align:center;font-family:Shrikhand,Georgia,serif;font-size:23px;margin:0 0 22px;">Nothing in this corner yet. Try another combination.</p>
+        </sc-if>
+
+        <sc-if value="{{ wallMode }}">
+          <div tabindex="0" role="region" aria-label="Flash wall — drag or use arrow keys to explore" ref="{{ wallRef }}" onKeyDown="{{ wallKey }}" onPointerDown="{{ wallDown }}" style="overflow:auto;max-height:80vh;border:4px solid #342A24;border-radius:22px;background:#EADFC0;background-image:repeating-linear-gradient(90deg,rgba(52,42,36,0.05) 0 3px,transparent 3px 26px);cursor:grab;overscroll-behavior:contain;">
+            <div style="columns:4;column-gap:26px;width:1800px;padding:26px;">
+              <sc-for list="{{ flashItems }}" as="f" hint-placeholder-count="6">
+                <article style="break-inside:avoid;margin:0 0 26px;background:#FFF6E4;border:3px solid #342A24;border-radius:18px;padding:15px;box-shadow:7px 7px 0 rgba(52,42,36,0.85);position:relative;transform:rotate({{ f.tilt }});opacity:{{ f.dim }};">
+                  <span aria-hidden="true" style="position:absolute;top:-13px;left:50%;width:26px;height:26px;border-radius:50%;background:{{ f.pin }};border:3px solid #342A24;transform:translateX(-50%);"></span>
+                  <button onClick="{{ f.onOpen }}" aria-label="{{ f.openLabel }}" style="display:block;width:100%;padding:0;border:3px solid #342A24;border-radius:12px;overflow:hidden;background:#FFF6E4;cursor:pointer;">
+                    <img src="{{ f.src }}" alt="{{ f.alt }}" width="700" height="700" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;" />
+                  </button>
+                  <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:19px;margin:12px 0 6px;">{{ f.title }}</h3>
+                  <p style="margin:0 0 8px;font-size:15px;font-weight:700;">{{ f.artist }} · {{ f.sizeLabel }} · {{ f.ink }}</p>
+                  <p style="margin:0 0 8px;"><span style="display:inline-block;padding:5px 12px;border-radius:999px;border:2px solid #342A24;font-weight:800;font-size:13px;background:{{ f.statusBg }};">{{ f.statusIcon }} {{ f.statusLabel }}</span></p>
+                  <p style="font-family:Caveat,cursive;font-size:20px;margin:0 0 10px;color:#5A4A3E;">“{{ f.note }}”</p>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <button onClick="{{ f.onRequest }}" style="padding:10px 15px;border-radius:999px;background:{{ f.btnBg }};color:{{ f.btnFg }};font-weight:800;font-size:14px;border:3px solid #342A24;cursor:pointer;min-height:44px;">{{ f.btnLabel }}</button>
+                    <button onClick="{{ f.onSave }}" aria-pressed="{{ f.saved }}" aria-label="{{ f.saveAria }}" style="padding:10px 14px;border-radius:999px;background:{{ f.saveBg }};font-weight:800;font-size:14px;border:3px solid #342A24;cursor:pointer;min-height:44px;">{{ f.saveLabel }}</button>
+                    <button onClick="{{ f.onShare }}" aria-label="{{ f.shareAria }}" style="padding:10px 14px;border-radius:999px;background:#FFF6E4;font-weight:800;font-size:14px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Share</button>
+                  </div>
+                </article>
+              </sc-for>
+            </div>
+          </div>
+          <p style="color:#F4E8CB;font-size:15px;margin:10px 0 0;">Drag the wall, scroll it, or use the arrow keys once it has focus.</p>
+        </sc-if>
+
+        <sc-if value="{{ gridMode }}">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;">
+            <sc-for list="{{ flashItems }}" as="f" hint-placeholder-count="6">
+              <article style="background:#FFF6E4;border:3px solid #342A24;border-radius:18px;padding:15px;box-shadow:6px 6px 0 #342A24;position:relative;opacity:{{ f.dim }};">
+                <button onClick="{{ f.onOpen }}" aria-label="{{ f.openLabel }}" style="display:block;width:100%;padding:0;border:3px solid #342A24;border-radius:12px;overflow:hidden;background:#FFF6E4;cursor:pointer;">
+                  <img src="{{ f.src }}" alt="{{ f.alt }}" width="700" height="700" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;" />
+                </button>
+                <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:20px;margin:12px 0 8px;">{{ f.title }}</h3>
+                <dl style="margin:0 0 10px;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:15px;">
+                  <dt style="font-weight:800;">Artist</dt><dd style="margin:0;">{{ f.artist }}</dd>
+                  <dt style="font-weight:800;">Size</dt><dd style="margin:0;">{{ f.sizeLabel }}</dd>
+                  <dt style="font-weight:800;">Placement</dt><dd style="margin:0;">{{ f.placement }}</dd>
+                  <dt style="font-weight:800;">Ink</dt><dd style="margin:0;">{{ f.ink }}</dd>
+                  <dt style="font-weight:800;">Repeat</dt><dd style="margin:0;">{{ f.repeatLabel }}</dd>
+                  <dt style="font-weight:800;">Pricing</dt><dd style="margin:0;">{{ f.price }}</dd>
+                </dl>
+                <p style="margin:0 0 10px;"><span style="display:inline-block;padding:5px 12px;border-radius:999px;border:2px solid #342A24;font-weight:800;font-size:13px;background:{{ f.statusBg }};">{{ f.statusIcon }} {{ f.statusLabel }}</span></p>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                  <button onClick="{{ f.onRequest }}" style="padding:10px 15px;border-radius:999px;background:{{ f.btnBg }};color:{{ f.btnFg }};font-weight:800;font-size:14px;border:3px solid #342A24;cursor:pointer;min-height:44px;">{{ f.btnLabel }}</button>
+                  <button onClick="{{ f.onSave }}" aria-pressed="{{ f.saved }}" aria-label="{{ f.saveAria }}" style="padding:10px 14px;border-radius:999px;background:{{ f.saveBg }};font-weight:800;font-size:14px;border:3px solid #342A24;cursor:pointer;min-height:44px;">{{ f.saveLabel }}</button>
+                  <button onClick="{{ f.onShare }}" aria-label="{{ f.shareAria }}" style="padding:10px 14px;border-radius:999px;background:#FFF6E4;font-weight:800;font-size:14px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Share</button>
+                </div>
+              </article>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <div id="gw-wall-skip" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px;">
+          <button onClick="{{ sunEgg }}" aria-label="A little sun. Press it and see." style="width:56px;height:56px;border-radius:50%;background:#D4A636;border:3px solid #342A24;font-size:22px;cursor:pointer;">☀</button>
+          <p style="margin:0;color:#F4E8CB;font-family:Caveat,cursive;font-size:24px;">{{ eggText }}</p>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ viewerOpen }}">
+    <div role="dialog" aria-modal="true" aria-label="{{ viewerTitle }}" style="position:fixed;inset:0;z-index:130;background:rgba(52,42,36,0.95);display:grid;grid-template-rows:auto 1fr;padding:10px;" onTouchStart="{{ onTouchStart }}" onTouchEnd="{{ onTouchEnd }}">
+      <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;">
+        <div style="display:flex;gap:10px;">
+          <button onClick="{{ viewerPrev }}" aria-label="Previous design" style="padding:12px 18px;border-radius:999px;border:3px solid #F4E8CB;background:none;color:#F4E8CB;font-weight:800;cursor:pointer;min-height:44px;">←</button>
+          <button onClick="{{ viewerNext }}" aria-label="Next design" style="padding:12px 18px;border-radius:999px;border:3px solid #F4E8CB;background:none;color:#F4E8CB;font-weight:800;cursor:pointer;min-height:44px;">→</button>
+        </div>
+        <button onClick="{{ closeViewer }}" aria-label="Close viewer" style="width:52px;height:52px;border-radius:50%;border:3px solid #F4E8CB;background:#D86E3D;color:#FFF6E4;font-size:22px;font-weight:800;cursor:pointer;">✕</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;align-items:start;overflow-y:auto;padding:12px 0 calc(16px + env(safe-area-inset-bottom));">
+        <div style="display:grid;place-items:center;">{{ viewerImage }}</div>
+        <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:20px;padding:20px;">
+          <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:26px;margin:0 0 6px;">{{ viewerTitle }}</h2>
+          <p style="margin:0 0 10px;"><span style="display:inline-block;padding:6px 13px;border-radius:999px;border:2px solid #342A24;font-weight:800;font-size:14px;background:{{ viewerStatusBg }};">{{ viewerStatusIcon }} {{ viewerStatusLabel }}</span></p>
+          <dl style="margin:0 0 14px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:16px;">
+            <dt style="font-weight:800;">Artist</dt><dd style="margin:0;">{{ viewerArtist }}</dd>
+            <dt style="font-weight:800;">Size</dt><dd style="margin:0;">{{ viewerSize }}</dd>
+            <dt style="font-weight:800;">Placement</dt><dd style="margin:0;">{{ viewerPlacement }}</dd>
+            <dt style="font-weight:800;">Ink</dt><dd style="margin:0;">{{ viewerInk }}</dd>
+            <dt style="font-weight:800;">Repeat</dt><dd style="margin:0;">{{ viewerRepeat }}</dd>
+            <dt style="font-weight:800;">Pricing</dt><dd style="margin:0;">{{ viewerPrice }}</dd>
+          </dl>
+          <p style="font-family:Caveat,cursive;font-size:23px;margin:0 0 16px;color:#5A4A3E;">“{{ viewerNote }}”</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button onClick="{{ viewerRequest }}" style="padding:13px 20px;border-radius:999px;background:{{ viewerBtnBg }};color:{{ viewerBtnFg }};font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">{{ viewerBtnLabel }}</button>
+            <button onClick="{{ viewerSave }}" style="padding:13px 20px;border-radius:999px;background:{{ viewerSaveBg }};font-weight:800;font-size:16px;border:3px solid #342A24;cursor:pointer;min-height:44px;">{{ viewerSaveLabel }}</button>
+            <button onClick="{{ viewerShare }}" style="padding:13px 20px;border-radius:999px;background:#FFF6E4;font-weight:800;font-size:16px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Share</button>
+            <button onClick="{{ viewerArtistPage }}" style="padding:13px 20px;border-radius:999px;background:#86B5C4;font-weight:800;font-size:16px;border:3px solid #342A24;cursor:pointer;min-height:44px;">See the artist</button>
+          </div>
+          <p style="margin:16px 0 0;font-size:15px;line-height:1.6;">Requesting a design doesn't reserve it or book an appointment — the artist confirms availability, placement, pricing and deposit.</p>
+          <sc-if value="{{ hasSimilar }}">
+            <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:20px;margin:18px 0 10px;">Similar designs</h3>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <sc-for list="{{ similar }}" as="s" hint-placeholder-count="0">
+                <button onClick="{{ s.onOpen }}" aria-label="{{ s.openLabel }}" style="width:84px;padding:0;border:3px solid #342A24;border-radius:10px;overflow:hidden;background:none;cursor:pointer;">
+                  <img src="{{ s.src }}" alt="{{ s.alt }}" width="200" height="200" loading="lazy" style="width:100%;height:auto;aspect-ratio:1;object-fit:cover;" />
+                </button>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ toast }}">
+    <p role="status" style="position:fixed;left:50%;bottom:100px;transform:translateX(-50%);z-index:140;background:#342A24;color:#FFF6E4;padding:14px 22px;border-radius:999px;font-weight:800;font-size:16px;box-shadow:4px 4px 0 rgba(0,0,0,0.3);margin:0;max-width:90vw;text-align:center;">{{ toast }}</p>
+  </sc-if>
+
+  <sc-if value="{{ isEvents }}">
+    <section style="padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:1200px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,64px);margin:0 0 10px;">Good World Gets Around</h1>
+        <p style="font-size:19px;line-height:1.7;max-width:60ch;margin:0 0 32px;">From Sacramento art shows to tattoo pop-ups in Tokyo, Good World is built around meeting people, sharing ideas and making art in unexpected places.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(286px,1fr));gap:26px;">
+          <sc-for list="{{ events }}" as="e" hint-placeholder-count="4">
+            <article style="border:3px solid #342A24;border-radius:18px;overflow:hidden;box-shadow:8px 8px 0 #342A24;background:{{ e.bg }};">
+              <div style="padding:26px 20px;border-bottom:3px solid #342A24;text-align:center;">
+                <p style="font-family:Caveat,cursive;font-size:24px;margin:0;">{{ e.kicker }}</p>
+                <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:29px;line-height:1.05;margin:6px 0;">{{ e.title }}</h2>
+                <p style="font-weight:800;letter-spacing:0.07em;text-transform:uppercase;font-size:14px;margin:0;">{{ e.when }} · {{ e.where }}</p>
+              </div>
+              <div style="padding:20px;background:#FFF6E4;">
+                <p style="margin:0 0 12px;line-height:1.65;font-size:17px;">{{ e.body }}</p>
+                <p style="margin:0 0 14px;font-weight:800;color:#B04A28;">{{ e.who }}</p>
+                <p style="margin:0;"><span style="display:inline-block;padding:6px 14px;border-radius:999px;border:2px dashed #342A24;font-weight:800;font-size:14px;">{{ e.status }}</span></p>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+        <div style="margin-top:34px;background:#86B5C4;border:3px solid #342A24;border-radius:20px;padding:24px;box-shadow:7px 7px 0 #342A24;">
+          <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:27px;margin:0 0 10px;">Guest Artists &amp; Tokyo Pop-Ups</h2>
+          <p style="margin:0;line-height:1.7;font-size:17px;">Guest spots and travel dates get announced here first. If you want to guest at Good World — or you're hosting something and want us there — send a note through the booking form. Confirmed dates, host studios and photo galleries fill in once the shop supplies them.</p>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isStudio }}">
+    <section style="padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,62px);margin:0 0 16px;">A Chill Place to Get Tattooed</h1>
+        <p style="font-size:19px;line-height:1.7;max-width:62ch;margin:0 0 16px;">The shop is clean, professional and genuinely relaxed. Music on, art on every wall, plants in the window, usually a conversation happening. Nobody here will make you feel small for asking a question.</p>
+        <p style="font-size:19px;line-height:1.7;max-width:62ch;margin:0 0 30px;">First tattoo? You're in good hands. We'll walk you through what the day looks like, how it feels, and what happens after.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+          <img src="uploads/imgi_6_730491306_27227429776942430_4898038280242152371_n.jpg" alt="Fresh gloves laid out before a tattoo session" width="700" height="520" loading="lazy" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:3px solid #342A24;border-radius:14px;box-shadow:6px 6px 0 #342A24;" />
+          <img src="uploads/imgi_4_568362311_1362856815548938_176907767738088039_n.jpg" alt="Hand-drawn dragon stencils on the drawing table" width="700" height="520" loading="lazy" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:3px solid #342A24;border-radius:14px;box-shadow:6px 6px 0 #342A24;" />
+          <img src="uploads/imgi_12_images.jpg" alt="Good World lettering and dragon tattoo, fresh off the machine" width="700" height="520" loading="lazy" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:3px solid #342A24;border-radius:14px;box-shadow:6px 6px 0 #342A24;" />
+        </div>
+      </div>
+    </section>
+    <section style="background:#775D7B;border-top:4px solid #342A24;border-bottom:4px solid #342A24;padding:clamp(36px,6vw,76px) clamp(18px,5vw,64px);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(26px,4.4vw,46px);margin:0 0 24px;color:#FFF6E4;">What We're About</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(226px,1fr));gap:20px;">
+          <sc-for list="{{ values }}" as="v" hint-placeholder-count="5">
+            <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #342A24;">
+              <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:22px;margin:0 0 8px;">{{ v.title }}</h3>
+              <p style="margin:0;line-height:1.6;font-size:17px;">{{ v.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+    <section style="padding:clamp(36px,6vw,76px) clamp(18px,5vw,64px);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(26px,4.4vw,46px);margin:0 0 6px;">Notes From Good People</h2>
+        <p style="font-family:Caveat,cursive;font-size:26px;color:#B04A28;margin:0 0 22px;">Real reviews only, linked to their source.</p>
+        <div style="background:#FFF6E4;border:3px dashed #342A24;border-radius:20px;padding:26px;max-width:640px;">
+          <p style="margin:0 0 10px;font-weight:800;">No reviews published here yet.</p>
+          <p style="margin:0;line-height:1.65;font-size:17px;">We don't write our own testimonials. Once the shop shares links to verified Google or Yelp reviews, they'll appear here as pinned notes with a link back to the original.</p>
+        </div>
+      </div>
+    </section>
+    <section style="background:#D4A636;border-top:4px solid #342A24;padding:clamp(36px,6vw,76px) clamp(18px,5vw,64px);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(26px,4.4vw,46px);margin:0 0 6px;">Stuff From the Studio</h2>
+        <p style="font-size:18px;line-height:1.7;max-width:58ch;margin:0 0 24px;">Prints, flash books, stickers, shirts, zines and the occasional original painting — like browsing a table at an art fair.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;">
+          <sc-for list="{{ merch }}" as="m" hint-placeholder-count="6">
+            <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:16px;padding:18px;box-shadow:5px 5px 0 #342A24;">
+              <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:20px;margin:0 0 6px;">{{ m.title }}</h3>
+              <p style="margin:0 0 10px;line-height:1.6;font-size:16px;">{{ m.body }}</p>
+              <p style="margin:0;font-weight:800;font-size:14px;background:#86B5C4;display:inline-block;padding:5px 12px;border-radius:999px;border:2px solid #342A24;">Photos &amp; pricing needed</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isWalkins }}">
+    <section style="padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:800px;margin:0 auto;text-align:center;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,62px);margin:0 0 14px;">Got an Idea Today?</h1>
+        <p style="font-size:19px;line-height:1.7;margin:0 0 10px;">Walk-ins are welcome whenever we have space. Smaller tattoos and available flash usually work best for same-day appointments. Send us a message or stop by and say hello.</p>
+        <p style="font-family:Caveat,cursive;font-size:26px;color:#B04A28;margin:0 0 28px;">No idea is too strange.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:32px;">
+          <button onClick="{{ goFlash }}" style="padding:14px 26px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;">Browse Available Flash</button>
+          <button onClick="{{ goBooking }}" style="padding:14px 26px;border-radius:999px;background:#D4A636;color:#342A24;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;">Bring Us Your Idea</button>
+          <a href="https://maps.google.com/?q=2401+15th+Street+Sacramento+CA+95818" target="_blank" rel="noopener" style="padding:14px 26px;border-radius:999px;background:#FFF6E4;color:#342A24;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;">Get Directions</a>
+        </div>
+        <p style="background:#FFF6E4;border:3px dashed #342A24;border-radius:18px;padding:22px;text-align:left;margin:0;line-height:1.7;font-size:17px;">We can't guarantee same-day availability — it depends who's in the shop and what's already booked. Live availability, shop hours and the best number to reach us still need to come from the studio.</p>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isBooking }}">
+    <section style="background:#438A84;border-bottom:4px solid #342A24;padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:800px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,62px);margin:0 0 12px;color:#FFF6E4;">Let's Make Something</h1>
+        <p style="font-size:19px;line-height:1.7;color:#FFF6E4;margin:0 0 26px;">You don't need to write the perfect tattoo request. Tell us what you're thinking, share any pictures you have, and we'll help you figure out the next step.</p>
+
+        <sc-if value="{{ submitted }}">
+          <div role="status" style="background:#D4A636;border:3px solid #342A24;border-radius:22px;padding:34px;box-shadow:8px 8px 0 #342A24;text-align:center;">
+            <p style="font-family:Shrikhand,Georgia,serif;font-size:27px;margin:0 0 12px;line-height:1.25;">Nice. Your idea is officially in the universe.</p>
+            <p style="font-size:18px;line-height:1.65;margin:0 0 20px;">Someone from Good World will reach out with availability and next steps. Appointments aren't confirmed until we've talked it through.</p>
+            <button onClick="{{ resetForm }}" style="padding:13px 24px;border-radius:999px;background:#342A24;color:#FFF6E4;font-weight:800;font-size:16px;border:3px solid #342A24;cursor:pointer;min-height:44px;">Send Another Idea</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:22px;padding:clamp(18px,3vw,30px);box-shadow:8px 8px 0 #342A24;">
+            <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0 0 22px;">
+              <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+                <li style="flex:1 1 120px;"><span style="display:block;padding:8px 10px;border-radius:12px;border:3px solid #342A24;font-weight:800;font-size:14px;text-align:center;background:{{ s.bg }};color:{{ s.fg }};">{{ s.n }}. {{ s.label }}</span></li>
+              </sc-for>
+            </ol>
+
+            <sc-if value="{{ step1 }}" hint-placeholder-val="{{ true }}">
+              <div style="display:grid;gap:18px;">
+                <sc-if value="{{ requestedTitle }}">
+                  <div style="display:flex;gap:14px;align-items:center;background:#F4E8CB;border:3px solid #342A24;border-radius:16px;padding:12px;">
+                    {{ requestedImage }}
+                    <span style="font-weight:800;">{{ requestedTitle }}<br /><span style="font-weight:600;font-size:15px;">{{ requestedMeta }}</span></span>
+                  </div>
+                </sc-if>
+                <label style="display:grid;gap:6px;font-weight:800;">What are you thinking about? <span style="font-weight:600;font-size:15px;">Required. A rough idea, a sketch, a strange dream — anything.</span>
+                  <textarea value="{{ f_idea }}" onChange="{{ setIdea }}" rows="4" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;resize:vertical;"></textarea>
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">What feeling should it have?
+                  <input value="{{ f_mood }}" onChange="{{ setMood }}" placeholder="Peaceful, funny, weird, bold…" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ step2 }}">
+              <div style="display:grid;gap:18px;">
+                <label style="display:grid;gap:6px;font-weight:800;">About how large should it be?
+                  <input value="{{ f_size }}" onChange="{{ setSize }}" placeholder="Palm-sized, forearm, full sleeve…" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">Where would you like the tattoo?
+                  <input value="{{ f_placement }}" onChange="{{ setPlacement }}" placeholder="Forearm, calf, ribs…" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ step3 }}">
+              <div style="display:grid;gap:18px;">
+                <label style="display:grid;gap:6px;font-weight:800;">Is there an artist you prefer?
+                  <select value="{{ f_artist }}" onChange="{{ setArtist }}" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;min-height:44px;">
+                    <option>Not sure — help me pick</option>
+                    <option>Eric Goodman</option>
+                    <option>Aaron Charley</option>
+                  </select>
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">Style you're drawn to
+                  <input value="{{ f_style }}" onChange="{{ setStyle }}" placeholder="Traditional, illustrative, fine line…" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">Color or black-and-grey?
+                  <select value="{{ f_color }}" onChange="{{ setColor }}" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;min-height:44px;">
+                    <option>Not sure yet</option>
+                    <option>Color</option>
+                    <option>Black and grey</option>
+                  </select>
+                </label>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ step4 }}">
+              <div style="display:grid;gap:18px;">
+                <label style="display:grid;gap:6px;font-weight:800;">What days usually work for you?
+                  <input value="{{ f_dates }}" onChange="{{ setDates }}" placeholder="Weekends, weekday mornings, flexible…" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">Budget you're working with <span style="font-weight:600;font-size:15px;">Optional. A range is fine — it helps us plan the size and detail.</span>
+                  <input value="{{ f_budget }}" onChange="{{ setBudget }}" inputmode="numeric" placeholder="e.g. a rough range" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ step5 }}">
+              <div style="display:grid;gap:18px;">
+                <label style="display:grid;gap:6px;font-weight:800;">Show us what's inspiring you. <span style="font-weight:600;font-size:15px;">JPG, PNG or HEIC, up to about 10 MB each. A photo of the spot on your body helps too.</span>
+                  <input type="file" multiple="" accept="image/*" capture="environment" style="padding:13px 14px;border:3px dashed #342A24;border-radius:12px;font-size:15px;background:#fff;min-height:44px;" />
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">What should we call you? <span style="font-weight:600;font-size:15px;">Required.</span>
+                  <input value="{{ f_name }}" onChange="{{ setName }}" autocomplete="name" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">Email <span style="font-weight:600;font-size:15px;">Required — this is how we reply.</span>
+                  <input value="{{ f_email }}" onChange="{{ setEmail }}" type="email" inputmode="email" autocomplete="email" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">Phone <span style="font-weight:600;font-size:15px;">Optional.</span>
+                  <input value="{{ f_phone }}" onChange="{{ setPhone }}" type="tel" inputmode="tel" autocomplete="tel" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;" />
+                </label>
+                <label style="display:grid;gap:6px;font-weight:800;">Anything else we should know?
+                  <textarea value="{{ f_notes }}" onChange="{{ setNotes }}" rows="3" style="padding:13px 14px;border:3px solid #342A24;border-radius:12px;font-size:16px;background:#fff;resize:vertical;"></textarea>
+                </label>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ hasError }}">
+              <p role="alert" style="margin:18px 0 0;background:#CE858A;border:3px solid #342A24;border-radius:12px;padding:13px 16px;font-weight:800;">{{ errorText }}</p>
+            </sc-if>
+
+            <p style="margin:14px 0 0;font-size:15px;font-weight:600;">Your answers are saved in this browser as you go, so you can step back without losing anything.</p>
+
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+              <sc-if value="{{ canGoBack }}">
+                <button onClick="{{ prevStep }}" style="padding:14px 24px;border-radius:999px;background:#FFF6E4;color:#342A24;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">← Back</button>
+              </sc-if>
+              <sc-if value="{{ notLastStep }}" hint-placeholder-val="{{ true }}">
+                <button onClick="{{ nextStep }}" style="padding:14px 28px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;">Next step →</button>
+              </sc-if>
+              <sc-if value="{{ lastStep }}">
+                <button onClick="{{ onSubmit }}" style="padding:14px 30px;border-radius:999px;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:17px;border:3px solid #342A24;box-shadow:5px 5px 0 #342A24;cursor:pointer;min-height:44px;">Send It Over</button>
+              </sc-if>
+              <button onClick="{{ clearForm }}" style="padding:14px 22px;border-radius:999px;background:none;color:#342A24;font-weight:800;font-size:16px;border:3px dashed #342A24;cursor:pointer;min-height:44px;">Clear form</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isCare }}">
+    <section style="padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:880px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,60px);margin:0 0 24px;">Before &amp; After</h1>
+        <div style="background:#D4A636;border:3px solid #342A24;border-radius:20px;padding:26px;box-shadow:7px 7px 0 #342A24;margin-bottom:24px;">
+          <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:28px;margin:0 0 14px;">Getting Ready</h2>
+          <ul style="margin:0;padding-left:22px;line-height:1.85;font-size:17px;">
+            <li>Eat a real meal before you come in, and bring a snack and water.</li>
+            <li>Sleep well the night before. Rested and sober makes for a better session.</li>
+            <li>Wear comfortable clothes that give easy access to the area.</li>
+            <li>Bring headphones, a book or a friend if that helps you settle.</li>
+            <li>Skip sunburn and heavy lotion on the area that day.</li>
+          </ul>
+          <p style="margin:16px 0 0;font-weight:800;">Deposit, ID and age requirements: to be confirmed by the shop.</p>
+        </div>
+        <div style="background:#86B5C4;border:3px solid #342A24;border-radius:20px;padding:26px;box-shadow:7px 7px 0 #342A24;margin-bottom:24px;">
+          <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:28px;margin:0 0 14px;">Aftercare</h2>
+          <p style="margin:0 0 14px;line-height:1.75;font-size:17px;">Your artist sends you home with instructions for your specific tattoo — follow those first. General good practice: keep it clean, moisturize lightly, stay out of the sun, and don't pick.</p>
+          <p style="margin:0;font-weight:800;">The shop's official written aftercare sheet still needs to be supplied and will replace this placeholder.</p>
+        </div>
+        <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(26px,4vw,42px);margin:34px 0 16px;">Questions People Ask</h2>
+        <div style="display:grid;gap:12px;">
+          <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
+            <details style="background:#FFF6E4;border:3px solid #342A24;border-radius:16px;padding:16px 20px;box-shadow:5px 5px 0 #342A24;">
+              <summary style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:20px;cursor:pointer;min-height:44px;display:flex;align-items:center;">{{ q.q }}</summary>
+              <p style="margin:12px 0 0;line-height:1.7;font-size:17px;">{{ q.a }}</p>
+            </details>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isVisit }}">
+    <section style="padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:1050px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,62px);margin:0 0 20px;">Come Say Hello</h1>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;align-items:start;">
+          <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:20px;padding:24px;box-shadow:7px 7px 0 #342A24;">
+            <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:26px;margin:0 0 10px;">Good World Tattoo</h2>
+            <address style="font-style:normal;font-size:19px;line-height:1.6;margin:0 0 16px;">2401 15th Street<br />Sacramento, California 95818</address>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;">
+              <button onClick="{{ copyAddress }}" style="padding:12px 20px;border-radius:999px;background:#D4A636;color:#342A24;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;cursor:pointer;min-height:44px;">{{ copyLabel }}</button>
+              <a href="https://maps.google.com/?q=2401+15th+Street+Sacramento+CA+95818" target="_blank" rel="noopener" style="padding:12px 20px;border-radius:999px;background:#438A84;color:#FFF6E4;font-weight:800;font-size:16px;border:3px solid #342A24;box-shadow:4px 4px 0 #342A24;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;">Open in Maps</a>
+            </div>
+            <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:21px;margin:0 0 8px;">Hours</h3>
+            <p style="margin:0 0 16px;font-weight:800;background:#CE858A;display:inline-block;padding:7px 14px;border-radius:999px;border:2px solid #342A24;">Shop hours needed</p>
+            <h3 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:21px;margin:0 0 8px;">Getting here</h3>
+            <p style="margin:0 0 8px;line-height:1.7;font-size:17px;">We're in Midtown on 15th Street. Street parking is usually the move — check posted signs.</p>
+            <p style="margin:0;font-weight:800;background:#CE858A;display:inline-block;padding:7px 14px;border-radius:999px;border:2px solid #342A24;">Phone, email and Instagram needed</p>
+          </div>
+          <div>
+            <iframe title="Map showing Good World Tattoo at 2401 15th Street, Sacramento" src="https://www.google.com/maps?q=2401+15th+Street+Sacramento+CA+95818&amp;output=embed" loading="lazy" style="width:100%;height:auto;aspect-ratio:4/3;border:3px solid #342A24;border-radius:20px;box-shadow:7px 7px 0 #342A24;"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ isChecklist }}">
+    <section style="padding:clamp(30px,5vw,64px) clamp(18px,5vw,64px);">
+      <div style="max-width:880px;margin:0 auto;">
+        <h1 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:clamp(30px,5.5vw,54px);margin:0 0 10px;">Before This Goes Live</h1>
+        <p style="font-size:18px;line-height:1.7;margin:0 0 26px;max-width:60ch;">Everything below is content only the shop can provide. Nothing here has been invented — no prices, reviews, policies or contact details.</p>
+        <div style="display:grid;gap:16px;">
+          <sc-for list="{{ checklist }}" as="c" hint-placeholder-count="6">
+            <div style="background:#FFF6E4;border:3px solid #342A24;border-radius:16px;padding:18px 20px;box-shadow:5px 5px 0 #342A24;">
+              <h2 style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:21px;margin:0 0 8px;color:#B04A28;">{{ c.title }}</h2>
+              <ul style="margin:0;padding-left:20px;line-height:1.75;font-size:17px;">
+                <sc-for list="{{ c.items }}" as="i" hint-placeholder-count="3"><li>{{ i }}</li></sc-for>
+              </ul>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  </main>
+
+  <footer style="background:#342A24;color:#F4E8CB;border-top:4px solid #342A24;padding:clamp(32px,5vw,60px) clamp(18px,5vw,64px) 40px;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;">
+      <div>
+        <p style="font-family:Shrikhand,Georgia,serif;font-size:26px;margin:0 0 8px;color:#F4E8CB;">Good World Tattoo</p>
+        <p style="margin:0 0 6px;line-height:1.6;">2401 15th Street<br />Sacramento, California 95818</p>
+        <p style="font-family:Caveat,cursive;font-size:24px;margin:10px 0 0;">Stay weird. Stay kind.</p>
+      </div>
+      <nav aria-label="Footer" style="display:grid;gap:6px;align-content:start;">
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="7">
+          <button onClick="{{ item.onClick }}" style="background:none;border:none;color:#F4E8CB;font-weight:800;font-size:17px;text-align:left;padding:9px 0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;min-height:44px;">{{ item.label }}</button>
+        </sc-for>
+      </nav>
+      <div style="display:grid;gap:10px;align-content:start;">
+        <button onClick="{{ goChecklist }}" style="background:none;border:3px dashed #F4E8CB;color:#F4E8CB;font-weight:800;font-size:16px;padding:12px 18px;border-radius:14px;cursor:pointer;min-height:44px;">Pre-launch checklist</button>
+        <p style="margin:0;font-size:15px;line-height:1.6;">Phone, email and Instagram links go here once the shop supplies them.</p>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ isMobile }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#F4E8CB;border-top:3px solid #342A24;">
+    <button onClick="{{ goGallery }}" style="padding:12px 6px;border-radius:14px;border:3px solid #342A24;background:#86B5C4;font-weight:800;font-size:15px;cursor:pointer;min-height:46px;">Tattoos</button>
+    <button onClick="{{ goBooking }}" style="padding:12px 6px;border-radius:14px;border:3px solid #342A24;background:#D86E3D;color:#FFF6E4;font-weight:800;font-size:15px;cursor:pointer;min-height:46px;">Book</button>
+    <a href="https://maps.google.com/?q=2401+15th+Street+Sacramento+CA+95818" target="_blank" rel="noopener" style="padding:12px 6px;border-radius:14px;border:3px solid #342A24;background:#D4A636;color:#342A24;font-weight:800;font-size:15px;text-decoration:none;display:grid;place-items:center;min-height:46px;">Directions</a>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ lightboxOpen }}">
+    <div role="dialog" aria-modal="true" aria-label="Tattoo image viewer" style="position:fixed;inset:0;z-index:120;background:rgba(52,42,36,0.94);display:grid;grid-template-rows:auto 1fr auto;padding:12px;" onTouchStart="{{ onTouchStart }}" onTouchEnd="{{ onTouchEnd }}">
+      <div style="display:flex;justify-content:flex-end;">
+        <button onClick="{{ closeLightbox }}" aria-label="Close viewer" style="width:52px;height:52px;border-radius:50%;border:3px solid #F4E8CB;background:#D86E3D;color:#FFF6E4;font-size:22px;font-weight:800;cursor:pointer;">✕</button>
+      </div>
+      <div style="display:grid;place-items:center;min-height:0;">
+        {{ lightboxImage }}
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:12px 4px calc(8px + env(safe-area-inset-bottom));">
+        <button onClick="{{ prevImage }}" aria-label="Previous image" style="padding:13px 22px;border-radius:999px;border:3px solid #F4E8CB;background:none;color:#F4E8CB;font-weight:800;font-size:16px;cursor:pointer;min-height:44px;">← Prev</button>
+        <p style="color:#F4E8CB;margin:0;text-align:center;flex:1 1 200px;line-height:1.5;"><strong style="font-family:Shrikhand,Georgia,serif;font-weight:400;font-size:19px;">{{ lightboxTitle }}</strong><br /><span style="font-size:15px;">{{ lightboxMeta }}</span></p>
+        <button onClick="{{ nextImage }}" aria-label="Next image" style="padding:13px 22px;border-radius:999px;border:3px solid #F4E8CB;background:none;color:#F4E8CB;font-weight:800;font-size:16px;cursor:pointer;min-height:44px;">Next →</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ showTop }}">
+    <button onClick="{{ scrollTop }}" aria-label="Back to top" style="position:fixed;right:14px;bottom:90px;z-index:75;width:52px;height:52px;border-radius:50%;border:3px solid #342A24;background:#D4A636;font-size:20px;font-weight:800;cursor:pointer;box-shadow:4px 4px 0 #342A24;">↑</button>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;showCaptions&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Gallery&quot;}}">
+const IMG = {
+  mascot: 'uploads/imgi_1_368564409_201904559551984_1738508491849070740_n.jpg',
+  snake: 'uploads/imgi_2_553984660_1331241388577284_1031697793607950467_n.jpg',
+  window: 'uploads/imgi_3_558299312_792344256850367_6091142140296185740_n.jpg',
+  dragon: 'uploads/imgi_4_568362311_1362856815548938_176907767738088039_n.jpg',
+  cards: 'uploads/imgi_5_574208126_18409388617186715_1770817121526148300_n.jpg',
+  gloves: 'uploads/imgi_6_730491306_27227429776942430_4898038280242152371_n.jpg',
+  pig: 'uploads/imgi_7_538909481_1553046505876616_2036941451416131607_n.jpg',
+  knee: 'uploads/imgi_8_564847043_18079049237103221_7015916254818199221_n.jpg',
+  pink: 'uploads/imgi_9_564623301_18070080212266574_2521178350465450387_n.jpg',
+  cat: 'uploads/imgi_11_547826454_24721736487456163_4372175017784574527_n.jpg',
+  cowgirl: 'uploads/imgi_8_images.jpg',
+  panther: 'uploads/imgi_10_images.jpg',
+  ladyDagger: 'uploads/imgi_11_images.jpg',
+  gwDragon: 'uploads/imgi_12_images.jpg',
+  warrior: 'uploads/imgi_13_images.jpg',
+  crab: 'uploads/imgi_14_images.jpg',
+  sprayDragon: 'uploads/imgi_15_images.jpg',
+  eyeSleeve: 'uploads/imgi_16_images.jpg',
+  fireGirl: 'uploads/imgi_18_images.jpg',
+  cowboySkull: 'uploads/imgi_19_images.jpg',
+  geisha: 'uploads/imgi_20_images.jpg',
+  topHatMouse: 'uploads/imgi_21_images.jpg'
+};
+
+const GALLERY = [
+  { src: IMG.panther, title: 'Panther and dagger', artist: 'Aaron Charley', style: 'American traditional', placement: 'Calf', kind: 'Custom', ratio: '1', tags: ['Traditional', 'Color', 'Custom', 'Characters'] },
+  { src: IMG.cowboySkull, title: 'Cowboy skull', artist: 'Aaron Charley', style: 'American traditional', placement: 'Forearm', kind: 'Custom', ratio: '1', tags: ['Traditional', 'Color', 'Custom'] },
+  { src: IMG.geisha, title: 'Geisha with a mirror', artist: 'Aaron Charley', style: 'Japanese-inspired traditional', placement: 'Forearm', kind: 'Custom', ratio: '4/7', tags: ['Traditional', 'Color', 'Custom', 'Characters'] },
+  { src: IMG.eyeSleeve, title: 'Lady, eye and flowers', artist: 'Eric Goodman', style: 'Black and grey traditional', placement: 'Upper arm', kind: 'Custom', ratio: '4/7', tags: ['Blackwork', 'Black and Grey', 'Custom', 'Nature'] },
+  { src: IMG.crab, title: 'Blue crab', artist: 'Aaron Charley', style: 'American traditional', placement: 'Inner arm', kind: 'Custom', ratio: '1', tags: ['Traditional', 'Color', 'Nature', 'Custom'] },
+  { src: IMG.gwDragon, title: 'Good World dragon', artist: 'Eric Goodman', style: 'Fine line blackwork', placement: 'Forearm', kind: 'Custom', ratio: '3/4', tags: ['Fine Line', 'Blackwork', 'Black and Grey', 'Custom'] },
+  { src: IMG.ladyDagger, title: 'Lady and dagger', artist: 'Aaron Charley', style: 'Black and grey traditional', placement: 'Upper arm', kind: 'Custom', ratio: '1', tags: ['Traditional', 'Black and Grey', 'Custom', 'Characters'] },
+  { src: IMG.sprayDragon, title: 'Dragon and spray can', artist: 'Aaron Charley', style: 'American traditional', placement: 'Forearm', kind: 'Custom', ratio: '3/4', tags: ['Traditional', 'Color', 'Characters', 'Custom'] },
+  { src: IMG.fireGirl, title: 'Girl in flames', artist: 'Aaron Charley', style: 'Illustrative colour', placement: 'Upper arm', kind: 'Custom', ratio: '4/7', tags: ['Illustrative', 'Color', 'Characters', 'Custom'] },
+  { src: IMG.topHatMouse, title: 'Mouse in a top hat', artist: 'Aaron Charley', style: 'American traditional', placement: 'Calf', kind: 'Custom', ratio: '1', tags: ['Traditional', 'Color', 'Characters', 'Custom'] },
+  { src: IMG.warrior, title: 'Little wrestler', artist: 'Aaron Charley', style: 'Illustrative colour', placement: 'Forearm', kind: 'Custom', ratio: '4/7', tags: ['Illustrative', 'Color', 'Characters', 'Custom'] },
+  { src: IMG.cowgirl, title: 'Cowgirl head', artist: 'Eric Goodman', style: 'Black and grey traditional', placement: 'Calf', kind: 'Custom', ratio: '3/4', tags: ['Traditional', 'Black and Grey', 'Custom'] },
+  { src: IMG.snake, title: 'Snake and eagle', artist: 'Aaron Charley', style: 'American traditional', placement: 'Forearm', kind: 'Custom', ratio: '1', tags: ['Traditional', 'Color', 'Custom', 'Nature'] },
+  { src: IMG.cat, title: 'Witch cat in a pumpkin', artist: 'Aaron Charley', style: 'Illustrative colour', placement: 'Lower leg', kind: 'Flash', ratio: '1', tags: ['Illustrative', 'Color', 'Characters', 'Flash'] },
+  { src: IMG.pink, title: 'Pink character', artist: 'Aaron Charley', style: 'Illustrative colour', placement: 'Thigh', kind: 'Custom', ratio: '1', tags: ['Illustrative', 'Color', 'Characters', 'Custom'] },
+  { src: IMG.pig, title: 'Little pig', artist: 'Eric Goodman', style: 'Black and grey illustrative', placement: 'Calf', kind: 'Custom', ratio: '4/5', tags: ['Illustrative', 'Black and Grey', 'Nature', 'Custom'] },
+  { src: IMG.cards, title: 'Cards and revolver', artist: 'Eric Goodman', style: 'Blackwork with dot shading', placement: 'Forearm', kind: 'Custom', ratio: '1', tags: ['Blackwork', 'Black and Grey', 'Custom'] },
+  { src: IMG.dragon, title: 'Dragon stencils', artist: 'Eric Goodman', style: 'Fine line drawing', placement: 'Studio drawing table', kind: 'Flash', ratio: '4/3', tags: ['Fine Line', 'Blackwork', 'Flash'] },
+  { src: IMG.window, title: 'Traditional piece in the shop window', artist: 'Aaron Charley', style: 'American traditional', placement: 'Upper arm', kind: 'Custom', ratio: '3/4', tags: ['Traditional', 'Color', 'Custom'] },
+  { src: IMG.knee, title: 'Small knee tattoo', artist: 'Aaron Charley', style: 'Traditional', placement: 'Knee', kind: 'Flash', ratio: '1', tags: ['Traditional', 'Color', 'Flash'] },
+  { src: IMG.gloves, title: 'Set up and ready', artist: 'Studio', style: 'Studio photograph', placement: 'Good World Tattoo', kind: 'Studio', ratio: '1', tags: ['Custom'] }
+];
+
+const FLASH = [
+  { id: 'GW-001', slug: 'witch-cat-pumpkin', src: IMG.cat, title: 'Witch cat, pumpkin seat', artist: 'Aaron Charley', size: 'Medium', sizeNote: 'About palm-sized', placement: 'Calf or outer arm', ink: 'Color', repeatable: true, featured: true, status: 'available', note: 'This little guy needs a home.', styles: ['Illustrative', 'Color', 'Characters'], moods: ['Funny', 'Colorful'], subjects: ['cat', 'pumpkin', 'witch', 'halloween'] },
+  { id: 'GW-002', slug: 'snake-and-eagle', src: IMG.snake, title: 'Snake and eagle', artist: 'Aaron Charley', size: 'Medium', sizeNote: 'About forearm-length', placement: 'Forearm or thigh', ink: 'Color', repeatable: false, featured: true, status: 'available', note: 'Would look great on a calf too.', styles: ['American Traditional', 'Color', 'Nature'], moods: ['Bold', 'Colorful'], subjects: ['snake', 'eagle', 'bird', 'flame'] },
+  { id: 'GW-003', slug: 'dragon-sheet', src: IMG.dragon, title: 'Dragon sheet', artist: 'Eric Goodman', size: 'Large', sizeNote: 'Varies by design on the sheet', placement: 'Arm, back or thigh', ink: 'Black and grey', repeatable: true, featured: false, status: 'ask', note: 'Happy to make any of these larger.', styles: ['Fine Line', 'Blackwork', 'Japanese-Inspired', 'Nature'], moods: ['Cosmic', 'Bold'], subjects: ['dragon', 'sheet', 'stencil'] },
+  { id: 'GW-004', slug: 'cards-and-revolver', src: IMG.cards, title: 'Cards and revolver', artist: 'Eric Goodman', size: 'Medium', sizeNote: 'About hand-sized', placement: 'Forearm', ink: 'Black and grey', repeatable: false, featured: true, status: 'available', note: 'Blackwork only. One and done.', styles: ['Blackwork', 'Black and Grey', 'Weird and Wonderful'], moods: ['Dark', 'Strange'], subjects: ['cards', 'revolver', 'skull', 'gambling'] },
+  { id: 'GW-005', slug: 'pink-little-guy', src: IMG.pink, title: 'Pink little guy', artist: 'Aaron Charley', size: 'Small', sizeNote: 'Palm or smaller', placement: 'Ankle, arm or ribs', ink: 'Color', repeatable: false, featured: false, status: 'claimed', note: 'One and done — but I can draw you a cousin.', styles: ['Illustrative', 'Color', 'Characters', 'Pop Culture'], moods: ['Funny', 'Colorful'], subjects: ['character', 'ghost', 'creature'] },
+  { id: 'GW-006', slug: 'peaceful-pig', src: IMG.pig, title: 'Peaceful pig', artist: 'Eric Goodman', size: 'Small', sizeNote: 'Small to medium', placement: 'Calf or upper arm', ink: 'Black and grey', repeatable: true, featured: false, status: 'repeatable', note: 'Repeatable with small changes.', styles: ['Illustrative', 'Black and Grey', 'Nature'], moods: ['Peaceful', 'Nature-Inspired'], subjects: ['pig', 'animal', 'farm'] },
+  { id: 'GW-007', slug: 'knee-classic', src: IMG.knee, title: 'Little knee classic', artist: 'Aaron Charley', size: 'Tiny', sizeNote: 'Coin to palm', placement: 'Knee or elbow', ink: 'Color', repeatable: true, featured: false, status: 'pending', note: 'Someone is thinking about this one.', styles: ['American Traditional', 'Color'], moods: ['Bold', 'Funny'], subjects: ['heart', 'classic', 'small'] },
+  { id: 'GW-008', slug: 'window-piece', src: IMG.window, title: 'Bold arm piece', artist: 'Aaron Charley', size: 'Large', sizeNote: 'Upper arm panel', placement: 'Upper arm', ink: 'Color', repeatable: false, featured: false, status: 'available', note: 'I\u2019d love to do this one in warm colors.', styles: ['American Traditional', 'Color', 'Nature'], moods: ['Bold', 'Colorful'], subjects: ['flower', 'traditional', 'sacramento'] },
+  { id: 'GW-009', slug: 'gloves-guest-slot', src: IMG.gloves, title: 'Guest artist slot', artist: 'Guest Artists', size: 'Medium', sizeNote: 'Depends on the guest', placement: 'Artist\u2019s choice', ink: 'Color or black and grey', repeatable: false, featured: false, status: 'archived', note: 'Archived until the next guest confirms.', styles: ['Illustrative'], moods: ['Strange'], subjects: ['guest', 'pop-up'] }
+];
+
+const STATUS = {
+  available: { label: 'Available', bg: '#9FC98F', icon: '●', request: true },
+  repeatable: { label: 'Repeatable', bg: '#86B5C4', icon: '⟳', request: true },
+  ask: { label: 'Ask the Artist', bg: '#D4A636', icon: '?', request: true },
+  pending: { label: 'Appointment Pending', bg: '#E9C27A', icon: '◷', request: false },
+  claimed: { label: 'Claimed', bg: '#CE858A', icon: '✕', request: false },
+  archived: { label: 'Archived', bg: '#D9CDB4', icon: '▤', request: false }
+};
+
+const F_STYLES = ['Illustrative', 'American Traditional', 'Blackwork', 'Fine Line', 'Color', 'Black and Grey', 'Weird and Wonderful', 'Nature', 'Characters', 'Japanese-Inspired', 'Pop Culture'];
+const F_SIZES = ['Tiny', 'Small', 'Medium', 'Large'];
+const F_MOODS = ['Peaceful', 'Funny', 'Strange', 'Bold', 'Colorful', 'Dark', 'Cosmic', 'Nature-Inspired'];
+const FAV_KEY = 'gwt_flash_favorites_v1';
+const CMS_KEY = 'gwt_flash_cms_v1';
+const VIEW_KEY = 'gwt_flash_view_v1';
+
+const ARTISTS = {
+  eric: {
+    key: 'eric', name: 'Eric Goodman', first: 'Eric', photo: IMG.eyeSleeve,
+    photoAlt: 'Black and grey upper-arm tattoo of a lady, flowers and an eye in a hand by Eric Goodman',
+    styles: 'Illustrative · blackwork · dot shading · fine line',
+    intro: 'Eric makes tattoos that feel like little worlds of their own — sometimes strange, sometimes peaceful, sometimes funny, and always personal.',
+    booking: 'Booking status needed from the shop',
+    fitFor: ['Whimsical illustration', 'Blackwork and dot shading', 'Surreal concepts', 'Nature and strange characters', 'Story-driven tattoos'],
+    cards: [
+      { title: 'What he likes drawing', body: 'Strange, lovable characters, plants and animals, cosmic scenery, and long story-driven pieces that build over a few sessions.' },
+      { title: 'Influences', body: 'Old illustrated books, nature drawing, Sacramento imagery and whatever he picked up on the last trip abroad.' },
+      { title: 'While he tattoos', body: 'Music preference to be confirmed — ask him and he will happily hand over the aux.' },
+      { title: 'Original flash', body: 'Eric draws new flash regularly. Sheets that are still available live on the Flash page.' }
+    ]
+  },
+  aaron: {
+    key: 'aaron', name: 'Aaron Charley', first: 'Aaron', photo: IMG.panther,
+    photoAlt: 'Traditional colour panther and dagger tattoo by Aaron Charley',
+    styles: 'American traditional · bold color · fine line · characters',
+    intro: 'Aaron mixes strong traditional tattooing with a playful eye for characters, color and ideas that do not always fit inside one category.',
+    booking: 'Booking status needed from the shop',
+    fitFor: ['American traditional', 'Bold, readable designs', 'Fine line work', 'Dragons and classic flash', 'Pop culture and animated characters'],
+    cards: [
+      { title: 'What he likes drawing', body: 'Classic flash imagery, dragons, animals, and characters from the shows and games people grew up with.' },
+      { title: 'Influences', body: 'Traditional Americana, Japanese motifs, animation and old flash sheets.' },
+      { title: 'While he tattoos', body: 'Music preference to be confirmed — the shop playlist swings wide.' },
+      { title: 'Custom work', body: 'Bring a rough idea and Aaron will draw it into something bold enough to still read in twenty years.' }
+    ]
+  }
+};
+
+const VALUES = [
+  { title: 'Be Yourself', body: 'The best tattoos begin with honest ideas.', dot: '#D86E3D' },
+  { title: 'Respect the Craft', body: 'Relaxed does not mean careless. Every tattoo gets attention, experience and professionalism.', dot: '#438A84' },
+  { title: 'Keep It Kind', body: 'No ego, no judgment, no unnecessary attitude.', dot: '#CE858A' },
+  { title: 'Make Cool Stuff', body: 'Stay curious, experiment, and make work that feels alive.', dot: '#D4A636' },
+  { title: 'Build a Good World', body: 'Support artists, friends, clients, guests and the neighbourhood around us.', dot: '#75814F' }
+];
+
+const EVENTS = [
+  { kicker: 'guest artist', title: 'Guest Spots', when: 'Dates TBC', where: 'Good World, Sacramento', body: 'Visiting artists set up in the shop for a few days at a time. Announcements go out here and on Instagram first.', who: 'Guest line-up to be confirmed', status: 'Dates needed from the shop', bg: '#D4A636' },
+  { kicker: 'pop-up', title: 'Tokyo Pop-Up', when: 'Dates TBC', where: 'Tokyo, Japan', body: 'Good World travels. Past trips have meant tattooing out of friends\u2019 studios, drawing all night and coming home with new ideas.', who: 'Participating artists to be confirmed', status: 'Host studio and dates needed', bg: '#CE858A' },
+  { kicker: 'flash day', title: 'Friday the 13th', when: 'Next occurrence', where: 'Good World, Sacramento', body: 'A wall of small designs, first come first served, all day. Bring a friend and get in line early.', who: 'Eric and Aaron', status: 'Confirm before publishing', bg: '#86B5C4' },
+  { kicker: 'art show', title: 'Print Release &amp; Art Night', when: 'Dates TBC', where: 'Sacramento', body: 'Original paintings, new prints, music and people standing around talking about art. Everyone welcome.', who: 'Local collaborators', status: 'Venue and date needed', bg: '#9FC98F' }
+];
+
+const MERCH = [
+  { title: 'Prints', body: 'Screen prints and giclée prints of original paintings and flash.' },
+  { title: 'Flash Books', body: 'Collected sheets from both artists, printed in small runs.' },
+  { title: 'Stickers', body: 'Cheap, weird and good for laptops, water bottles and toolboxes.' },
+  { title: 'Shirts & Hats', body: 'Shop designs printed in small batches, restocked when we feel like it.' },
+  { title: 'Zines', body: 'Sketchbook pages, travel photos and whatever else made the cut.' },
+  { title: 'Originals', body: 'One-off paintings and handmade objects from the studio.' }
+];
+
+const FAQS = [
+  { q: 'Do I need an appointment?', a: 'Appointments are the safest bet, but walk-ins are welcome whenever we have room. Smaller pieces and available flash work best same-day.' },
+  { q: 'What if I don\u2019t know exactly what I want?', a: 'That is completely normal. Bring the feeling, a story or a few images you like and we will build the idea together.' },
+  { q: 'Is it going to hurt?', a: 'A bit, yes — it varies by placement and by person. We take breaks whenever you need them, and nobody is going to rush you.' },
+  { q: 'How much will it cost?', a: 'Pricing depends on size, detail and time. The shop has not published rates here yet — ask when you send your idea and you will get a real answer.' },
+  { q: 'Can I bring someone with me?', a: 'Usually yes, space permitting. Check with your artist when you book so we can plan the room.' },
+  { q: 'Do you tattoo minors?', a: 'Age and ID requirements follow California law — the shop\u2019s exact policy still needs to be published here.' }
+];
+
+const CHECKLIST = [
+  { title: 'Contact details', items: ['Shop phone number', 'Booking email address', 'Instagram handles for the shop and each artist', 'Preferred contact method and typical reply time'] },
+  { title: 'Hours & policies', items: ['Opening hours, including walk-in windows', 'Deposit amount and refund policy', 'Cancellation and rescheduling policy', 'Age and ID requirements', 'Official written aftercare sheet'] },
+  { title: 'Pricing', items: ['Hourly rate or minimum, if the shop publishes one', 'Per-design flash pricing (currently shown as \u201cask for pricing\u201d)'] },
+  { title: 'Artist information', items: ['Confirmed booking status for Eric and Aaron', 'Candid portraits of each artist', 'Music, interests and fun facts in their own words', 'Any additional resident or apprentice artists'] },
+  { title: 'Photography', items: ['High-resolution originals for every image currently on the site — the supplied files are only 150px wide and look soft at full size', 'Studio interior photos — walls, plants, furniture, flash', 'Candid photos of artists working and clients hanging out', 'High-resolution portfolio images (1600–2200px) for the gallery', 'Event and Tokyo pop-up photo galleries', 'Product photos for prints, shirts, zines and stickers'] },
+  { title: 'Flash & gallery data', items: ['Real design names, sizes, placements and availability', 'Which designs are claimed, repeatable or one-of-one', 'Artist credit for every gallery image', 'Short story or inspiration notes where they exist'] },
+  { title: 'Events', items: ['Confirmed guest artist names and dates', 'Tokyo pop-up host studio and dates', 'Friday the 13th details', 'RSVP or ticket links'] },
+  { title: 'Reviews & legal', items: ['Links to verified Google or Yelp reviews (none have been invented)', 'Business licence and health permit details if displayed', 'Privacy notice for the booking form and uploads'] }
+];
+
+const NAV = [
+  ['home', 'Home'], ['artists', 'Artists'], ['gallery', 'Tattoos'], ['flash', 'Flash'],
+  ['events', 'Events'], ['studio', 'Studio'], ['care', 'Prep & FAQ'], ['visit', 'Visit']
+];
+
+const STEPS = ['Your idea', 'Size & place', 'Artist & style', 'When & budget', 'Photos & you'];
+const FORM_KEY = 'gwt_booking_draft_v1';
+
+class Component extends DCLogic {
+  state = {
+    page: 'home', menuOpen: false, gFilter: 'All', fFilter: 'All',
+    lightbox: null, lbList: 'gallery', step: 0, submitted: false, error: '',
+    form: { idea: '', mood: '', size: '', placement: '', artist: 'Not sure — help me pick', style: '', color: 'Not sure yet', dates: '', budget: '', name: '', email: '', phone: '', notes: '' },
+    showTop: false, copied: false, artistKey: 'eric',
+    query: '', fAvail: 'All', fArtist: 'All Artists', fStyles: [], fSizes: [], fMoods: [],
+    view: 'wall', savedOpen: false, adminOpen: false, showArchived: false,
+    favorites: [], cms: {}, viewer: null, toast: '', eggOn: false, requested: null,
+    isDesktop: typeof window !== 'undefined' ? window.innerWidth >= 1080 : true
+  };
+
+  componentDidMount() {
+    this._mq = window.matchMedia('(min-width: 1080px)');
+    this._onMq = (e) => this.setState({ isDesktop: e.matches, menuOpen: e.matches ? false : this.state.menuOpen });
+    this.setState({ isDesktop: this._mq.matches });
+    if (this._mq.addEventListener) this._mq.addEventListener('change', this._onMq); else this._mq.addListener(this._onMq);
+    try {
+      const saved = localStorage.getItem(FORM_KEY);
+      if (saved) this.setState({ form: Object.assign({}, this.state.form, JSON.parse(saved)) });
+    } catch (e) {}
+    try {
+      const fav = JSON.parse(localStorage.getItem(FAV_KEY) || '[]');
+      const cms = JSON.parse(localStorage.getItem(CMS_KEY) || '{}');
+      const view = sessionStorage.getItem(VIEW_KEY);
+      this.setState({ favorites: Array.isArray(fav) ? fav : [], cms: cms || {}, view: view === 'grid' ? 'grid' : 'wall' });
+    } catch (e) {}
+    const hash = (window.location.hash || '').replace('#', '');
+    if (hash.indexOf('flash/') === 0) {
+      const slug = hash.slice(6);
+      const hit = FLASH.filter(f => f.slug === slug)[0];
+      if (hit) this.setState({ page: 'flash', viewer: hit.id });
+    }
+    this._onScroll = () => {
+      const s = window.scrollY > 700;
+      if (s !== this.state.showTop) this.setState({ showTop: s });
+    };
+    this._onKey = (e) => {
+      if (this.state.viewer) {
+        if (e.key === 'Escape') this.closeViewer();
+        if (e.key === 'ArrowRight') this.viewerStep(1);
+        if (e.key === 'ArrowLeft') this.viewerStep(-1);
+        return;
+      }
+      if (this.state.lightbox === null) { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); return; }
+      if (e.key === 'Escape') this.setState({ lightbox: null });
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('keydown', this._onKey);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('keydown', this._onKey);
+    if (this._mq) { if (this._mq.removeEventListener) this._mq.removeEventListener('change', this._onMq); else this._mq.removeListener(this._onMq); }
+  }
+
+  go(page, artistKey) {
+    const next = { page: page, menuOpen: false };
+    if (artistKey) next.artistKey = artistKey;
+    this.setState(next);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  lbSource() { return this.filteredGallery().map(g => ({ src: g.src, title: g.title, meta: g.artist + ' · ' + g.style + ' · ' + g.placement })); }
+  step(d) {
+    const list = this.lbSource();
+    if (!list.length) return;
+    this.setState({ lightbox: (this.state.lightbox + d + list.length) % list.length });
+  }
+
+  filteredGallery() {
+    const f = this.state.gFilter;
+    return f === 'All' ? GALLERY : GALLERY.filter(g => g.tags.indexOf(f) > -1);
+  }
+  entry(f) {
+    const o = this.state.cms[f.id] || {};
+    return Object.assign({}, f, o);
+  }
+  allFlash() { return FLASH.map(f => this.entry(f)); }
+
+  filteredFlash() {
+    const st = this.state;
+    const q = st.query.trim().toLowerCase();
+    return this.allFlash().filter(f => {
+      if (f.status === 'archived' && !st.showArchived) return false;
+      if (st.fAvail !== 'All' && f.status !== st.fAvail) return false;
+      if (st.fArtist !== 'All Artists' && f.artist !== st.fArtist) return false;
+      if (st.fStyles.length && !st.fStyles.some(s => f.styles.indexOf(s) > -1)) return false;
+      if (st.fSizes.length && st.fSizes.indexOf(f.size) < 0) return false;
+      if (st.fMoods.length && !st.fMoods.some(m => f.moods.indexOf(m) > -1)) return false;
+      if (q) {
+        const hay = [f.title, f.artist, f.ink, f.placement, f.note].concat(f.styles, f.moods, f.subjects).join(' ').toLowerCase();
+        const ok = q.split(/\s+/).every(w => hay.indexOf(w) > -1 || hay.indexOf(w.replace(/s$/, '')) > -1);
+        if (!ok) return false;
+      }
+      return true;
+    });
+  }
+
+  cmsSet(id, patch) {
+    const cms = Object.assign({}, this.state.cms);
+    cms[id] = Object.assign({}, cms[id], patch);
+    this.setState({ cms: cms });
+    try { localStorage.setItem(CMS_KEY, JSON.stringify(cms)); } catch (e) {}
+  }
+
+  say(msg) {
+    this.setState({ toast: msg });
+    clearTimeout(this._toastT);
+    this._toastT = setTimeout(() => this.setState({ toast: '' }), 2600);
+  }
+
+  toggleFav(id) {
+    const has = this.state.favorites.indexOf(id) > -1;
+    const next = has ? this.state.favorites.filter(x => x !== id) : this.state.favorites.concat([id]);
+    this.setState({ favorites: next });
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(next)); } catch (e) {}
+    this.say(has ? 'Taken off your pile.' : 'Saved to your little pile of good ideas.');
+  }
+
+  shareDesign(f) {
+    const url = window.location.origin + window.location.pathname + '#flash/' + f.slug;
+    const data = { title: 'Good World Tattoo — ' + f.title, text: f.title + ' by ' + f.artist, url: url };
+    if (navigator.share) { navigator.share(data).catch(() => {}); return; }
+    try { navigator.clipboard.writeText(url); this.say('Link copied. Send it to someone.'); }
+    catch (e) { this.say('Copy this link: ' + url); }
+  }
+
+  openViewer(id) {
+    this._lastFocus = document.activeElement;
+    const f = this.allFlash().filter(x => x.id === id)[0];
+    if (f) { try { history.replaceState(null, '', '#flash/' + f.slug); } catch (e) {} }
+    this.setState({ viewer: id });
+  }
+  closeViewer() {
+    try { history.replaceState(null, '', window.location.pathname); } catch (e) {}
+    this.setState({ viewer: null });
+    if (this._lastFocus && this._lastFocus.focus) setTimeout(() => this._lastFocus.focus(), 0);
+  }
+  viewerStep(d) {
+    const list = this.filteredFlash();
+    if (!list.length) return;
+    let i = list.map(x => x.id).indexOf(this.state.viewer);
+    if (i < 0) i = 0;
+    this.openViewer(list[(i + d + list.length) % list.length].id);
+  }
+
+  requestDesign(f) {
+    const form = Object.assign({}, this.state.form, {
+      idea: 'Flash request — ' + f.title + ' (' + f.id + ') by ' + f.artist + '. ' + (STATUS[f.status].request ? '' : 'I know this one may not be available — happy to talk about a custom version.'),
+      artist: f.artist === 'Eric Goodman' ? 'Eric Goodman' : (f.artist === 'Aaron Charley' ? 'Aaron Charley' : 'Not sure — help me pick'),
+      placement: f.placement, size: f.sizeNote, color: f.ink === 'Color' ? 'Color' : (f.ink === 'Black and grey' ? 'Black and grey' : 'Not sure yet')
+    });
+    this.setState({ form: form, requested: f, viewer: null });
+    try { localStorage.setItem(FORM_KEY, JSON.stringify(form)); } catch (e) {}
+    this.go('booking');
+  }
+
+  setField(k) {
+    return (e) => {
+      const form = Object.assign({}, this.state.form);
+      form[k] = e.target.value;
+      this.setState({ form: form });
+      try { localStorage.setItem(FORM_KEY, JSON.stringify(form)); } catch (err) {}
+    };
+  }
+
+  validate() {
+    const f = this.state.form, s = this.state.step;
+    if (s === 0 && !f.idea.trim()) return 'Tell us a little about the idea first — even one line helps.';
+    if (s === 4) {
+      if (!f.name.trim()) return 'We need a name to put on the reply.';
+      if (!f.email.trim() || f.email.indexOf('@') < 0) return 'That email does not look right — we can\u2019t reply without it.';
+    }
+    return '';
+  }
+
+  renderVals() {
+    const st = this.state;
+    const p = st.page;
+    const navBg = (k) => (p === k ? '#D4A636' : 'transparent');
+    const nav = NAV.map(([k, label]) => ({
+      label: label, current: p === k ? 'page' : undefined,
+      bg: navBg(k), bg2: p === k ? '#D4A636' : '#FFF6E4',
+      onClick: () => this.go(k)
+    }));
+
+    const openFrom = (list, i) => () => this.setState({ lbList: list, lightbox: i });
+
+    const gal = this.filteredGallery().map((g, i) => ({
+      src: g.src, title: g.title, ratio: g.ratio,
+      meta: g.artist + ' · ' + g.style + ' · ' + g.kind,
+      openLabel: 'Open ' + g.title + ' full screen',
+      onOpen: openFrom('gallery', i)
+    }));
+
+    const galleryFilters = ['All', 'Illustrative', 'Traditional', 'Blackwork', 'Fine Line', 'Color', 'Black and Grey', 'Characters', 'Nature', 'Flash', 'Custom'].map(label => ({
+      label: label, active: st.gFilter === label,
+      bg: st.gFilter === label ? '#342A24' : '#FFF6E4',
+      fg: st.gFilter === label ? '#FFF6E4' : '#342A24',
+      onClick: () => this.setState({ gFilter: label })
+    }));
+
+    const mkOpt = (label, active, onClick) => ({ label: label, active: active, onClick: onClick, bg: active ? '#342A24' : '#F4E8CB', fg: active ? '#FFF6E4' : '#342A24' });
+    const toggleIn = (key, val) => () => {
+      const cur = st[key];
+      this.setState({ [key]: cur.indexOf(val) > -1 ? cur.filter(x => x !== val) : cur.concat([val]) });
+    };
+    const filterGroups = [
+      { name: 'Available', aria: 'Filter by availability', options: [['All', 'All'], ['Available', 'available'], ['Repeatable', 'repeatable'], ['Ask the Artist', 'ask'], ['Claimed', 'claimed']].map(([l, v]) => mkOpt(l, st.fAvail === v, () => this.setState({ fAvail: v }))) },
+      { name: 'Artist', aria: 'Filter by artist', options: ['All Artists', 'Eric Goodman', 'Aaron Charley', 'Guest Artists'].map(a => mkOpt(a, st.fArtist === a, () => this.setState({ fArtist: a }))) },
+      { name: 'Style', aria: 'Filter by style', options: F_STYLES.map(s => mkOpt(s, st.fStyles.indexOf(s) > -1, toggleIn('fStyles', s))) },
+      { name: 'Size', aria: 'Filter by size', options: F_SIZES.map(s => mkOpt(s, st.fSizes.indexOf(s) > -1, toggleIn('fSizes', s))) },
+      { name: 'Mood', aria: 'Filter by mood', options: F_MOODS.map(m => mkOpt(m, st.fMoods.indexOf(m) > -1, toggleIn('fMoods', m))) }
+    ];
+
+    const activeChips = []
+      .concat(st.fAvail !== 'All' ? [{ label: STATUS[st.fAvail].label, onRemove: () => this.setState({ fAvail: 'All' }) }] : [])
+      .concat(st.fArtist !== 'All Artists' ? [{ label: st.fArtist, onRemove: () => this.setState({ fArtist: 'All Artists' }) }] : [])
+      .concat(st.fStyles.map(s => ({ label: s, onRemove: toggleIn('fStyles', s) })))
+      .concat(st.fSizes.map(s => ({ label: s, onRemove: toggleIn('fSizes', s) })))
+      .concat(st.fMoods.map(m => ({ label: m, onRemove: toggleIn('fMoods', m) })))
+      .concat(st.query ? [{ label: '“' + st.query + '”', onRemove: () => this.setState({ query: '' }) }] : []);
+
+    const list = this.filteredFlash();
+    const mkCard = (f, i) => {
+      const s = STATUS[f.status];
+      const requestable = s.request;
+      const saved = st.favorites.indexOf(f.id) > -1;
+      return {
+        id: f.id, src: f.src, title: f.title, artist: f.artist, ink: f.ink,
+        alt: f.title + ' — flash design by ' + f.artist,
+        sizeLabel: f.size + ' · ' + f.sizeNote, placement: f.placement,
+        repeatLabel: f.repeatable ? 'Repeatable with small changes' : 'One and done',
+        price: 'Ask for pricing', note: f.note,
+        statusLabel: s.label, statusBg: s.bg, statusIcon: s.icon,
+        tilt: ((i % 5) - 2) * 0.9 + 'deg',
+        pin: ['#438A84', '#D86E3D', '#D4A636', '#CE858A', '#775D7B'][i % 5],
+        dim: requestable ? 1 : 0.82,
+        btnLabel: requestable ? 'Request This Tattoo' : 'Ask About a Custom Version',
+        btnBg: requestable ? '#D86E3D' : '#E4D6B4',
+        btnFg: requestable ? '#FFF6E4' : '#342A24',
+        saved: saved, saveLabel: saved ? '☀ Saved' : '☀ Save',
+        saveBg: saved ? '#D4A636' : '#FFF6E4',
+        saveAria: (saved ? 'Remove ' : 'Save ') + f.title + (saved ? ' from' : ' to') + ' your saved flash',
+        shareAria: 'Share ' + f.title,
+        openLabel: 'Open ' + f.title + ' by ' + f.artist,
+        onOpen: () => this.openViewer(f.id),
+        onSave: () => this.toggleFav(f.id),
+        onShare: () => this.shareDesign(f),
+        onRequest: () => this.requestDesign(f)
+      };
+    };
+    const flashItems = list.map(mkCard);
+    const featuredFlash = this.allFlash().filter(f => f.featured && f.status !== 'archived').map(mkCard);
+    const savedItems = this.allFlash().filter(f => st.favorites.indexOf(f.id) > -1).map(f => ({
+      src: f.src, title: f.title, alt: f.title + ' by ' + f.artist,
+      openLabel: 'Open ' + f.title, onOpen: () => this.openViewer(f.id),
+      onRemove: () => this.toggleFav(f.id)
+    }));
+
+    const vf = st.viewer ? this.allFlash().filter(f => f.id === st.viewer)[0] : null;
+    const vs = vf ? STATUS[vf.status] : null;
+    const vSaved = vf ? st.favorites.indexOf(vf.id) > -1 : false;
+    const similar = vf ? this.allFlash().filter(f => f.id !== vf.id && f.status !== 'archived' && f.styles.some(s => vf.styles.indexOf(s) > -1)).slice(0, 4).map(f => ({
+      src: f.src, alt: f.title + ' by ' + f.artist, openLabel: 'Open ' + f.title, onOpen: () => this.openViewer(f.id)
+    })) : [];
+
+    const adminRows = this.allFlash().map(f => ({
+      id: f.id, src: f.src, title: f.title, artist: f.artist, status: f.status, featured: f.featured,
+      onStatus: (e) => this.cmsSet(f.id, { status: e.target.value }),
+      onFeature: (e) => this.cmsSet(f.id, { featured: e.target.checked })
+    }));
+
+    const artist = ARTISTS[st.artistKey];
+    const artistWork = GALLERY.filter(g => g.artist === artist.name).map((g) => ({
+      src: g.src, title: g.title, openLabel: 'Open ' + g.title + ' full screen',
+      onOpen: () => { this.setState({ gFilter: 'All' }); openFrom('gallery', GALLERY.indexOf(g))(); }
+    }));
+
+    const lbList = this.lbSource();
+    const lb = st.lightbox !== null ? lbList[st.lightbox] : null;
+
+    const steps = STEPS.map((label, i) => ({
+      n: i + 1, label: label,
+      bg: i === st.step ? '#342A24' : (i < st.step ? '#9FC98F' : '#F4E8CB'),
+      fg: i === st.step ? '#FFF6E4' : '#342A24'
+    }));
+
+    return {
+      nav: nav,
+      isHome: p === 'home', isArtists: p === 'artists', isArtistPage: p === 'artist',
+      isGallery: p === 'gallery', isFlash: p === 'flash', isEvents: p === 'events',
+      isStudio: p === 'studio', isWalkins: p === 'walkins', isBooking: p === 'booking',
+      isCare: p === 'care', isVisit: p === 'visit', isChecklist: p === 'checklist',
+      goHome: () => this.go('home'), goArtists: () => this.go('artists'), goGallery: () => this.go('gallery'),
+      goFlash: () => this.go('flash'), goEvents: () => this.go('events'), goStudio: () => this.go('studio'),
+      goWalkins: () => this.go('walkins'), goBooking: () => this.go('booking'), goVisit: () => this.go('visit'),
+      goChecklist: () => this.go('checklist'),
+      menuOpen: st.menuOpen, isDesktop: st.isDesktop, isMobile: !st.isDesktop,
+      toggleMenu: () => this.setState({ menuOpen: !st.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+
+      artists: [ARTISTS.eric, ARTISTS.aaron].map(a => ({
+        name: a.name, first: a.first, photo: a.photo, photoAlt: a.photoAlt,
+        styles: a.styles, intro: a.intro, booking: a.booking, fitFor: a.fitFor,
+        onClick: () => this.go('artist', a.key),
+        onBook: () => { const form = Object.assign({}, st.form, { artist: a.name }); this.setState({ form: form }); this.go('booking'); }
+      })),
+      artist: { name: artist.name, first: artist.first, photo: artist.photo, photoAlt: artist.photoAlt, intro: artist.intro, booking: artist.booking },
+      artistPortrait: p === 'artist' ? React.createElement('img', { src: artist.photo, alt: artist.photoAlt, width: 900, height: 900, style: { width: '100%', height: 'auto', aspectRatio: '1', objectFit: 'cover', border: '4px solid #FFF6E4', boxShadow: '9px 9px 0 #342A24' } }) : null,
+      artistCards: artist.cards,
+      artistWork: artistWork,
+
+      featured: GALLERY.slice(0, 6).map((g, i) => ({ src: g.src, title: g.title, openLabel: 'Open ' + g.title + ' full screen', onOpen: () => { this.setState({ gFilter: 'All' }); openFrom('gallery', i)(); } })),
+      galleryItems: gal, galleryFilters: galleryFilters, galleryEmpty: gal.length === 0,
+      flashItems: flashItems, flashEmpty: flashItems.length === 0,
+      filterGroups: filterGroups, activeChips: activeChips,
+      hasActiveFilters: activeChips.length > 0,
+      clearFilters: () => this.setState({ fAvail: 'All', fArtist: 'All Artists', fStyles: [], fSizes: [], fMoods: [], query: '' }),
+      resultCount: list.length === 1 ? '1 design found' : list.length + ' designs found',
+      query: st.query, setQuery: (e) => this.setState({ query: e.target.value }),
+      featuredFlash: featuredFlash, showFeatured: featuredFlash.length > 0 && activeChips.length === 0 && !st.savedOpen,
+      wallMode: st.view === 'wall' && st.isDesktop, gridMode: !(st.view === 'wall' && st.isDesktop),
+      viewToggleLabel: st.view === 'wall' ? 'Switch to Simple Grid' : 'Back to the Wall',
+      toggleView: () => { const v = st.view === 'wall' ? 'grid' : 'wall'; try { sessionStorage.setItem(VIEW_KEY, v); } catch (e) {} this.setState({ view: v }); },
+      wallRef: (el) => { this._wall = el; },
+      resetView: () => { if (this._wall) this._wall.scrollTo({ top: 0, left: 0, behavior: 'smooth' }); },
+      wallKey: (e) => {
+        if (!this._wall) return;
+        const d = 160;
+        if (e.key === 'ArrowRight') { this._wall.scrollLeft += d; e.preventDefault(); }
+        if (e.key === 'ArrowLeft') { this._wall.scrollLeft -= d; e.preventDefault(); }
+        if (e.key === 'ArrowDown') { this._wall.scrollTop += d; e.preventDefault(); }
+        if (e.key === 'ArrowUp') { this._wall.scrollTop -= d; e.preventDefault(); }
+      },
+      wallDown: (e) => {
+        const el = this._wall;
+        if (!el || e.target.closest('button')) return;
+        const sx = e.clientX, sy = e.clientY, sl = el.scrollLeft, stp = el.scrollTop;
+        el.style.cursor = 'grabbing';
+        const move = (ev) => { el.scrollLeft = sl - (ev.clientX - sx); el.scrollTop = stp - (ev.clientY - sy); };
+        const up = () => { el.style.cursor = 'grab'; window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+        window.addEventListener('pointermove', move);
+        window.addEventListener('pointerup', up);
+      },
+      pickWeird: () => {
+        const pool = this.allFlash().filter(f => STATUS[f.status].request);
+        if (!pool.length) { this.say('The available wall is taking a little nap. Check back soon.'); return; }
+        const pick = pool[Math.floor(Math.random() * pool.length)];
+        this.say('Shuffling the wall…');
+        this.openViewer(pick.id);
+      },
+      savedOpen: st.savedOpen, savedCount: st.favorites.length,
+      savedBtnBg: st.savedOpen ? '#D4A636' : '#FFF6E4',
+      toggleSaved: () => this.setState({ savedOpen: !st.savedOpen }),
+      savedItems: savedItems, hasSaved: savedItems.length > 0, noSaved: savedItems.length === 0,
+      clearSaved: () => {
+        if (!window.confirm('Clear every design in your saved pile?')) return;
+        try { localStorage.removeItem(FAV_KEY); } catch (e) {}
+        this.setState({ favorites: [] });
+        this.say('Pile cleared.');
+      },
+      sendSaved: () => {
+        const titles = savedItems.map(s => s.title).join(', ');
+        const form = Object.assign({}, st.form, { idea: 'Saved flash for inspiration: ' + titles + '.' });
+        this.setState({ form: form });
+        try { localStorage.setItem(FORM_KEY, JSON.stringify(form)); } catch (e) {}
+        this.go('booking');
+      },
+      adminOpen: st.adminOpen, toggleAdmin: () => this.setState({ adminOpen: !st.adminOpen }),
+      adminRows: adminRows,
+      adminReset: () => { try { localStorage.removeItem(CMS_KEY); } catch (e) {} this.setState({ cms: {} }); this.say('Back to published values.'); },
+      showArchived: st.showArchived, archiveBtnBg: st.showArchived ? '#D4A636' : '#FFF6E4',
+      toggleArchive: () => this.setState({ showArchived: !st.showArchived }),
+      viewerOpen: !!vf,
+      viewerImage: vf ? React.createElement('img', { src: vf.src, alt: vf.title + ' — flash design by ' + vf.artist, style: { maxWidth: '100%', maxHeight: '62vh', objectFit: 'contain', border: '4px solid #F4E8CB', borderRadius: '8px' } }) : null,
+      viewerTitle: vf ? vf.title : '', viewerArtist: vf ? vf.artist : '',
+      viewerSize: vf ? vf.size + ' · ' + vf.sizeNote : '', viewerPlacement: vf ? vf.placement : '',
+      viewerInk: vf ? vf.ink : '', viewerRepeat: vf ? (vf.repeatable ? 'Repeatable with small changes' : 'One and done') : '',
+      viewerPrice: 'Ask for pricing', viewerNote: vf ? vf.note : '',
+      viewerStatusLabel: vs ? vs.label : '', viewerStatusBg: vs ? vs.bg : '', viewerStatusIcon: vs ? vs.icon : '',
+      viewerBtnLabel: vs ? (vs.request ? 'Request This Tattoo' : 'Ask About a Custom Version') : '',
+      viewerBtnBg: vs && vs.request ? '#D86E3D' : '#E4D6B4', viewerBtnFg: vs && vs.request ? '#FFF6E4' : '#342A24',
+      viewerSaveLabel: vSaved ? '☀ Saved' : '☀ Save', viewerSaveBg: vSaved ? '#D4A636' : '#FFF6E4',
+      viewerSave: () => vf && this.toggleFav(vf.id),
+      viewerShare: () => vf && this.shareDesign(vf),
+      viewerRequest: () => vf && this.requestDesign(vf),
+      viewerArtistPage: () => { if (!vf) return; this.setState({ viewer: null }); this.go(vf.artist === 'Eric Goodman' ? 'artist' : (vf.artist === 'Aaron Charley' ? 'artist' : 'artists'), vf.artist === 'Eric Goodman' ? 'eric' : 'aaron'); },
+      viewerPrev: () => this.viewerStep(-1), viewerNext: () => this.viewerStep(1),
+      closeViewer: () => this.closeViewer(),
+      similar: similar, hasSimilar: similar.length > 0,
+      toast: st.toast,
+      eggText: st.eggOn ? 'You found the sun. It says hello.' : 'Made to be worn.',
+      sunEgg: () => { this.setState({ eggOn: !st.eggOn }); this.say(st.eggOn ? 'Sun back to normal.' : 'Good World says hi.'); },
+      showCaptions: this.props.showCaptions !== false,
+
+      values: VALUES, events: EVENTS, merch: MERCH, faqs: FAQS, checklist: CHECKLIST,
+
+      lightboxOpen: st.lightbox !== null && !!lb,
+      lightboxImage: lb ? React.createElement('img', { src: lb.src, alt: lb.title, style: { maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', border: '4px solid #F4E8CB' } }) : null,
+      lightboxTitle: lb ? lb.title : '', lightboxMeta: lb ? lb.meta : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      prevImage: () => this.step(-1), nextImage: () => this.step(1),
+      onTouchStart: (e) => { this._tx = e.changedTouches[0].clientX; },
+      onTouchEnd: (e) => {
+        const dx = e.changedTouches[0].clientX - (this._tx || 0);
+        if (Math.abs(dx) <= 45) return;
+        if (st.viewer) this.viewerStep(dx < 0 ? 1 : -1); else this.step(dx < 0 ? 1 : -1);
+      },
+
+      requestedTitle: st.requested ? st.requested.title : '',
+      requestedMeta: st.requested ? st.requested.id + ' · ' + st.requested.artist + ' · ' + STATUS[st.requested.status].label : '',
+      requestedImage: st.requested ? React.createElement('img', { src: st.requested.src, alt: '', width: 72, height: 72, style: { width: '72px', height: '72px', objectFit: 'cover', border: '2px solid #342A24', borderRadius: '10px' } }) : null,
+      steps: steps,
+      step1: st.step === 0, step2: st.step === 1, step3: st.step === 2, step4: st.step === 3, step5: st.step === 4,
+      canGoBack: st.step > 0, notLastStep: st.step < 4, lastStep: st.step === 4,
+      hasError: !!st.error, errorText: st.error,
+      submitted: st.submitted, notSubmitted: !st.submitted,
+      f_idea: st.form.idea, f_mood: st.form.mood, f_size: st.form.size, f_placement: st.form.placement,
+      f_artist: st.form.artist, f_style: st.form.style, f_color: st.form.color, f_dates: st.form.dates,
+      f_budget: st.form.budget, f_name: st.form.name, f_email: st.form.email, f_phone: st.form.phone, f_notes: st.form.notes,
+      setIdea: this.setField('idea'), setMood: this.setField('mood'), setSize: this.setField('size'),
+      setPlacement: this.setField('placement'), setArtist: this.setField('artist'), setStyle: this.setField('style'),
+      setColor: this.setField('color'), setDates: this.setField('dates'), setBudget: this.setField('budget'),
+      setName: this.setField('name'), setEmail: this.setField('email'), setPhone: this.setField('phone'), setNotes: this.setField('notes'),
+      nextStep: () => { const err = this.validate(); if (err) { this.setState({ error: err }); return; } this.setState({ step: Math.min(4, st.step + 1), error: '' }); },
+      prevStep: () => this.setState({ step: Math.max(0, st.step - 1), error: '' }),
+      onSubmit: () => { const err = this.validate(); if (err) { this.setState({ error: err }); return; } try { localStorage.removeItem(FORM_KEY); } catch (e) {} this.setState({ submitted: true, error: '' }); },
+      clearForm: () => {
+        if (!window.confirm('Clear everything you have written so far?')) return;
+        try { localStorage.removeItem(FORM_KEY); } catch (e) {}
+        this.setState({ step: 0, error: '', form: { idea: '', mood: '', size: '', placement: '', artist: 'Not sure — help me pick', style: '', color: 'Not sure yet', dates: '', budget: '', name: '', email: '', phone: '', notes: '' } });
+      },
+      resetForm: () => this.setState({ submitted: false, step: 0 }),
+
+      copyLabel: st.copied ? 'Address copied' : 'Copy Address',
+      copyAddress: () => {
+        try { navigator.clipboard.writeText('2401 15th Street, Sacramento, CA 95818'); } catch (e) {}
+        this.setState({ copied: true });
+        setTimeout(() => this.setState({ copied: false }), 2000);
+      },
+
+      showTop: st.showTop,
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' })
+    };
+  }
+}
+</script>
+</body>
+</html>
